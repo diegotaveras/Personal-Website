@@ -1,11 +1,11 @@
 {
   "main.css": "/static/css/main.ec764bac.chunk.css",
-  "main.js": "/static/js/main.116b5a29.chunk.js",
-  "main.js.map": "/static/js/main.116b5a29.chunk.js.map",
+  "main.js": "/static/js/main.bd99f3c9.chunk.js",
+  "main.js.map": "/static/js/main.bd99f3c9.chunk.js.map",
   "static/js/1.f881440d.chunk.js": "/static/js/1.f881440d.chunk.js",
   "static/js/1.f881440d.chunk.js.map": "/static/js/1.f881440d.chunk.js.map",
-  "static/js/2.7ee4a7fa.chunk.js": "/static/js/2.7ee4a7fa.chunk.js",
-  "static/js/2.7ee4a7fa.chunk.js.map": "/static/js/2.7ee4a7fa.chunk.js.map",
+  "static/js/2.eb13476c.chunk.js": "/static/js/2.eb13476c.chunk.js",
+  "static/js/2.eb13476c.chunk.js.map": "/static/js/2.eb13476c.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.33b20e46.js",
   "runtime~main.js.map": "/static/js/runtime~main.33b20e46.js.map",
   "static/media/linked-in-logo.png": "/static/media/linked-in-logo.a08f59f4.png",
@@ -14,6 +14,6 @@
   "static/media/Diego-Taveras-Resume.pdf": "/static/media/Diego-Taveras-Resume.94af267c.pdf",
   "static/css/main.ec764bac.chunk.css.map": "/static/css/main.ec764bac.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.1c57108e3f8d7118ba1d6b6ea63a7192.js": "/precache-manifest.1c57108e3f8d7118ba1d6b6ea63a7192.js",
+  "precache-manifest.60e6c353f7ff42d0d9287ba702b01ce9.js": "/precache-manifest.60e6c353f7ff42d0d9287ba702b01ce9.js",
   "service-worker.js": "/service-worker.js"
 }
