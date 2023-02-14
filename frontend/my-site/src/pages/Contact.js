@@ -34,7 +34,7 @@ export default function Contact() {
         </li>
         <li>
     
-            <a href="mailto:taverad1003@gmail.com" target="_blank" rel="noopener noreferrer">
+            <a href="mailto:taverasd1003@gmail.com" target="_blank" rel="noopener noreferrer">
                     <img src={mail_logo} height="100px" alt="Github"></img>
             </a>
             <body>at taverasd1003@gmail.com <br/> 
