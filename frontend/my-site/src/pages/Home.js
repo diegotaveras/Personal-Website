@@ -7,7 +7,7 @@ export default function Home() {
     return <div className="home">
 
         <h1>Hi! My name is Diego Taveras and I'm a Puertorican Computer Science student studying at UIUC. </h1>
-        <img src={diego} height="500px" alt="Github"></img>
+        
         <div className="info">
         
             <p>{"{ Major: Computer Science,"} <br/> 
@@ -30,6 +30,7 @@ export default function Home() {
             </p>
         
         </div>
+        <img src={diego} height="500px" alt="Github"></img>
         <div className="image">
             <img src={i} height="350px"></img>
         </div>

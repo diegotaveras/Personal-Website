@@ -22,12 +22,14 @@ body {
 
 .image {
   display: inline-block;
-  float: right;
+  /* float: right; */
+  position: absolute;
   max-width:100%;
   max-height:100%;
  
   text-align: right;
   padding-top: 5%;
+  padding-left: 5%;
   
   padding-right: 5%;
   
@@ -43,11 +45,20 @@ body {
 
 .info {
   /* margin-right: 50%; */
-  float: left;
+  /* float: left; */
   /* text-align: left; */
+  /* padding-bottom: 20%; */
+  
+  font-size:100%;
   padding-top: 0%;
-  display: block;
+  display: flex;
   padding-left: 10%;
+  padding-right: 20%;
+  position:absolute;
+  text-align: left;
+  
+  
+  
   
 }
 .home {
