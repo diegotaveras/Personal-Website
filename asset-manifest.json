@@ -1,7 +1,7 @@
 {
-  "main.css": "/static/css/main.4925cde4.chunk.css",
-  "main.js": "/static/js/main.1038185e.chunk.js",
-  "main.js.map": "/static/js/main.1038185e.chunk.js.map",
+  "main.css": "/static/css/main.ec764bac.chunk.css",
+  "main.js": "/static/js/main.116b5a29.chunk.js",
+  "main.js.map": "/static/js/main.116b5a29.chunk.js.map",
   "static/js/1.f881440d.chunk.js": "/static/js/1.f881440d.chunk.js",
   "static/js/1.f881440d.chunk.js.map": "/static/js/1.f881440d.chunk.js.map",
   "static/js/2.7ee4a7fa.chunk.js": "/static/js/2.7ee4a7fa.chunk.js",
@@ -12,8 +12,8 @@
   "static/media/mail-logo.png": "/static/media/mail-logo.8b1d4bba.png",
   "static/media/diego.JPG": "/static/media/diego.171fb2af.JPG",
   "static/media/Diego-Taveras-Resume.pdf": "/static/media/Diego-Taveras-Resume.94af267c.pdf",
-  "static/css/main.4925cde4.chunk.css.map": "/static/css/main.4925cde4.chunk.css.map",
+  "static/css/main.ec764bac.chunk.css.map": "/static/css/main.ec764bac.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.2668db4ceb28f96fe013761a7ad8f40f.js": "/precache-manifest.2668db4ceb28f96fe013761a7ad8f40f.js",
+  "precache-manifest.1c57108e3f8d7118ba1d6b6ea63a7192.js": "/precache-manifest.1c57108e3f8d7118ba1d6b6ea63a7192.js",
   "service-worker.js": "/service-worker.js"
 }

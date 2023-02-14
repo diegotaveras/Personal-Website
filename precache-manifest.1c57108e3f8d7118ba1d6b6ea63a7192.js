@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "1038185ecd8c0728324e",
-    "url": "/static/css/main.4925cde4.chunk.css"
+    "revision": "116b5a29d96b7d7427cc",
+    "url": "/static/css/main.ec764bac.chunk.css"
   },
   {
-    "revision": "1038185ecd8c0728324e",
-    "url": "/static/js/main.1038185e.chunk.js"
+    "revision": "116b5a29d96b7d7427cc",
+    "url": "/static/js/main.116b5a29.chunk.js"
   },
   {
     "revision": "f881440d46e811047be5",
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/static/media/Diego-Taveras-Resume.94af267c.pdf"
   },
   {
-    "revision": "dbe227ac1311ad9401d4c60e62d4c6f0",
+    "revision": "f464dabfa6d38313878bb94a328fa6ce",
     "url": "/index.html"
   }
 ];
