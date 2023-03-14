@@ -36,8 +36,10 @@ body {
 }
 
 .project {
+  top:10;
+  left:0;
   height: 100%;
-  position: absolute;
+  position: fixed;
   width: 100%; 
   color: white;
   background-color: #4c768d;
@@ -96,7 +98,7 @@ body {
 .contact li {
   
   padding-top: 5%;
- padding-bottom: 0%;
+  padding-bottom: 0%;
   display: block;
   
   /* list-style-type: decimal; */
@@ -141,4 +143,29 @@ body {
 
 .nav li:hover {
   background-color: #777;
+}
+
+.sign-in {
+  display: flex; /* set display to flex */
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  height: 50vh; /* set the height to 100% of the viewport height */
+  margin: 0; /* remove default body margin */
+}
+
+.project button {
+  
+  background-color: #1DB954;
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 50px; /* Make it oval */
+  padding: 15px 32px; /* Add some padding */
+  text-align: center; /* Center the text */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px auto; /* Center the button horizontally */
+  display: block; /* Make the button a block element */
+  width: 200px; /* Set the width */
+  
 }

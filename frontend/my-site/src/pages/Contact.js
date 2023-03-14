@@ -20,11 +20,7 @@ export default function Contact() {
             <a href="https://github.com/diegotaveras" target="_blank" rel="noopener noreferrer">
                 <img src={github_logo} height="100px" alt="Github"></img>
             </a>
-            
 
-            
-        
-        
         </li>
         <li>
             <a href="https://www.linkedin.com/in/diego-taveras/" target="_blank" rel="noopener noreferrer">
