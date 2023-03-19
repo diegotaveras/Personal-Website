@@ -7,6 +7,8 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Playlists from './Playlists';
+import PlaylistInfo from './PlaylistInfo';
+import TrackStats from './TrackStats';
 
 function App() {
 
@@ -26,6 +28,12 @@ function App() {
       </Routes>
       <Routes>
         <Route path = "/user-playlists" element= {<Playlists/>}/>
+      </Routes>
+      <Routes>
+        <Route path = "/user-playlists/:id" element= {<PlaylistInfo/>}/>
+      </Routes>
+      <Routes>
+        <Route path = "/user-playlists/:id/:id2" element= {<TrackStats/>}/>
       </Routes>
       <Routes>
         <Route path = "/" element={<Home/>}/>

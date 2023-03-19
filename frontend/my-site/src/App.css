@@ -169,3 +169,79 @@ body {
   width: 200px; /* Set the width */
   
 }
+
+.project button:hover {
+  background-color: #1fc459;
+  cursor: pointer;
+  
+}
+
+.playlist-container {
+  display: flex;
+  flex-direction: row-reverse;
+  
+}
+
+.playlists {
+  
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  position: relative;
+  align-items: left;
+  height:100%;
+  width: 100%;
+  background-color: #1DB954;
+  font-family: Arial, sans-serif;
+  color:#1DB954;
+  flex: 1;
+}
+.playlists li{
+  font-size:xx-large;
+  margin-bottom: 2.5%;
+}
+.playlists a{
+  text-decoration: none;
+  color: black;
+}
+
+.trackStats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #1DB954;
+  font-family: Arial, sans-serif;
+}
+
+.trackStats h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.trackStats p {
+  font-size: 1.5rem;
+  margin-top: 0;
+  color: #FFFFFF;
+}
+
+
+.playlist-averages {
+  display: inline-block;
+  height: 200px;
+  width: 30%;
+  /* border: 1px solid red; */
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+.playlist-averages h1 {
+  color:#1DB954;
+}
+

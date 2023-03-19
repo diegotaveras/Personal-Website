@@ -1,5 +1,4 @@
 import React from "react";
-import SpotifyLoginButton from "../SpotifyLoginButton";
 import axios from "axios";
 import {useState, useEffect} from "react";
 
@@ -22,10 +21,13 @@ import {useState, useEffect} from "react";
 //     </div>
 //   );
 
+// import axios from 'axios';
+
+
 
 const getSpotifyUserLogin = async () => {
   try {
-    const response = await axios.get("http://localhost:8000/api/login");
+    const response = await axios.get("35.162.152.30:8000/api/login");
     const url = response.data;
     window.location.href = url;
   } catch (error) {

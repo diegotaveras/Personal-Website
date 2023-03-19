@@ -7,7 +7,7 @@ export default function Playlists() {
     const  [userPlaylists, setUserPlaylists] = useState();
   
     useEffect(() => {
-      fetch("http://localhost:8000/api/user-playlists")
+      fetch("http://35.162.152.30:8000/api/user-playlists")
       .then(response => response.json())
       .then(data=> {
         console.log(data)
@@ -17,11 +17,11 @@ export default function Playlists() {
     
 
     return (
-        <div>
+        <div className="playlists">
             {userPlaylists ? (
                 userPlaylists.map((playlistsResult) => {
-                    const url = `https://api.spotify.com/v1/playlists/${playlistsResult.id}`;
-                    return <li key= {playlistsResult.name}> <a href = {url}> {playlistsResult.name}</a></li>
+                    const url = `http://35.162.152.30:8000/user-playlists/${playlistsResult.id}`;
+                    return <li key= {playlistsResult.id}> <a href = {url}> {playlistsResult.name}</a></li>
                 })
             ):
             (
