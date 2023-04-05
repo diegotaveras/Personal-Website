@@ -114,6 +114,7 @@ body {
   align-items: center;
   gap: 2rem;
   padding: 0 1rem;
+  position: relative;
 }
 
 .site-title {

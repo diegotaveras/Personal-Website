@@ -6,28 +6,13 @@ import {useState, useEffect} from "react";
 
 
 
-
-
-
-
-// export default function Projects() {
-//   return (
-//     <div className="project">
-//       <h1>Welcome to my Spotify playlist analyzer, made possible by Spotify Web API!</h1>
-
-//       <div className="sign-in">
-//         <SpotifyLoginButton />
-//       </div>
-//     </div>
-//   );
-
-// import axios from 'axios';
-
-
-
 const getSpotifyUserLogin = async () => {
+  // http://localhost:8000
+  // http://ec2-34-218-50-216.us-west-2.compute.amazonaws.com:8000
+  // 54.201.222.75:8000
   try {
-    const response = await axios.get("35.162.152.30:8000/api/login");
+    const response = await axios.get("http://54.201.222.75:8000/api/login");
+    // response.header("Access-Control-Allow-Origin", "*");
     const url = response.data;
     window.location.href = url;
   } catch (error) {
@@ -35,16 +20,27 @@ const getSpotifyUserLogin = async () => {
   }
 }
 
+
+// const getSpotifyUserLogin = async () => {
+//   try {
+//     const response = await fetch("http://ec2-54-187-60-185.us-west-2.compute.amazonaws.com:8000/api/login", {
+//       method: 'GET',
+//       mode: 'no-cors',
+//       headers:{
+//         "Access-Control-Allow-Headers" : "Content-Type",
+//         "Access-Control-Allow-Origin": "https://localhost:3000",
+//         "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+//       }
+//     })
+//     const url = await response.json();
+//     window.location.href = url;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+
 export default function Projects() {
-  // const getSpotifyUserLogin = () => {
-  //   // Replace the URL with your actual endpoint
-  //   const scopes = ["user-read-private", "user-read-email", "user-top-read"];
-  //   const clientId = "01a5a5acf2c241f2aa7f38695368c12c";
-  //   const redirectUri = "http://localhost:8000/api/get-user-code/";
-  //   const showDialog = true;
-  //   const url = `https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${scopes}&redirect_uri=${redirectUri}&show_dialog=${showDialog}`;
-  //   window.location.href = url;
-  // };
   
   return (
     <div className="project">

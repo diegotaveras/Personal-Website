@@ -1,4 +1,4 @@
-package com.example.controllers;
+package com.example.springbootserverless;
 
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -38,6 +38,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.RequestHeader;
+
+
+
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 
@@ -45,13 +52,15 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-
-
-@CrossOrigin(origins = "http://localhost:3000")
+// @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api")
+@RequestMapping(value = "/api")
+
+                                    // This controls/maps all calls to the Spotify API. The class contains the auth token in the SpotifyAPI object which allows user calls to the API.
 public class AuthController {
-    private static final URI redirectURI = SpotifyHttpManager.makeUri("http://35.162.152.30:8000/api/get-user-code/");
+
+    
+    private static final URI redirectURI = SpotifyHttpManager.makeUri("http://localhost:8000/api/get-user-code/");
     private String code = "";
 
     private static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
@@ -60,8 +69,6 @@ public class AuthController {
     .setRedirectUri(redirectURI)
     .build();
 
-
-
     @GetMapping("login")
     @ResponseBody
     public String spotifyLogin() {
@@ -69,12 +76,13 @@ public class AuthController {
         .scope("user-read-private, user-read-email, playlist-read-private, playlist-read-collaborative")
         .show_dialog(true)
         .build();
-
+        
         final URI uri = authorizationCodeUriRequest.execute();
-
+        System.out.println(uri.toString());
         return uri.toString();
 
     }
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("get-user-code")
     public String getSpotifyUserCode(@RequestParam("code") String userCode, HttpServletResponse response) throws IOException {
         code = userCode;
@@ -120,9 +128,7 @@ public class AuthController {
         final GetPlaylistsItemsRequest getPlaylistsItemsRequest = spotifyApi.getPlaylistsItems(id)
                 .limit (100)
                 .offset(0).build();
-                // final GetAudioFeaturesForSeveralTracksRequest getAudioFeaturesForSeveralTracksRequest = spotifyApi
-                // .getAudioFeaturesForSeveralTracks(ids)
-                // .build();
+
         try {
             final Paging<PlaylistTrack> tracksPaging = getPlaylistsItemsRequest.execute();
             return tracksPaging.getItems();
@@ -132,12 +138,11 @@ public class AuthController {
         return new PlaylistTrack[0];
     }
 
-    @GetMapping(value = "user-playlists/{id}/stats")                // this needs to return an array of iAudioFeatures
+    @GetMapping(value = "user-playlists/{id}/stats")               
     public AudioFeatures[] getPlaylistStats(@PathVariable String id) {
 
         PlaylistTrack[] items = getPlaylistTracks(id);
        
-     
 
         ArrayList<String> list = new ArrayList<String>(); 
         for (PlaylistTrack item : items) {
@@ -159,30 +164,12 @@ public class AuthController {
         return new AudioFeatures[0];
     }
 
-    // @GetMapping(value = "user-playlists/{id}/{id2}")
-    // public AudioFeatures getTrackStats(@PathVariable String id, @PathVariable String id2) {
-
-    //     final GetAudioFeaturesForTrackRequest getAudioFeaturesForTrackRequest = spotifyApi.getAudioFeaturesForTrack(id2)
-    //     .build();
-    //     // final GetTrackRequest getTrackRequest = spotifyApi.getTrack(id2)     this is for potentially adding track name to the track features section
-    //     // .build();
-
-    //     try {
-    //         final AudioFeatures audioFeatures = getAudioFeaturesForTrackRequest.execute();
-    //         // final Track track = spotifyApi.getTrack(id2).execute();
-    //         // audioFeatures.put("name", track.getName());
-    //         return audioFeatures;
-    //     } catch (Exception e) {
-    //         System.out.println("Something's wrong" + e.getMessage());
-    //     }
-    //     return new AudioFeatures.Builder().build();
-    // }
     @GetMapping(value = "user-playlists/{id}/{id2}")
-    public HashMap<String, Object> getTrackStats(@PathVariable String id, @PathVariable String id2) {
+    public HashMap<String, Object> getTrackStats(@PathVariable String id, @PathVariable String id2) {                   //implemented witha  hash map so that we can carry name and artist fields from the playlistInfo into the trackStats section
     final GetAudioFeaturesForTrackRequest getAudioFeaturesForTrackRequest = spotifyApi.getAudioFeaturesForTrack(id2).build();
 
     try {
-        final AudioFeatures audioFeatures = getAudioFeaturesForTrackRequest.execute();
+        final AudioFeatures audioFeatures = getAudioFeaturesForTrackRequest.execute();              
         final Track track = spotifyApi.getTrack(id2).build().execute();
         // console.log(track.getName());
         HashMap<String, Object> result = new HashMap<>();

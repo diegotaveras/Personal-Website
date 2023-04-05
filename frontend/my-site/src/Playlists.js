@@ -7,7 +7,7 @@ export default function Playlists() {
     const  [userPlaylists, setUserPlaylists] = useState();
   
     useEffect(() => {
-      fetch("http://35.162.152.30:8000/api/user-playlists")
+      fetch("http://localhost:8000/api/user-playlists")
       .then(response => response.json())
       .then(data=> {
         console.log(data)
@@ -20,7 +20,7 @@ export default function Playlists() {
         <div className="playlists">
             {userPlaylists ? (
                 userPlaylists.map((playlistsResult) => {
-                    const url = `http://35.162.152.30:8000/user-playlists/${playlistsResult.id}`;
+                    const url = `http://localhost:3000/user-playlists/${playlistsResult.id}`;
                     return <li key= {playlistsResult.id}> <a href = {url}> {playlistsResult.name}</a></li>
                 })
             ):

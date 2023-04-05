@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-    <NavBar/>
+   <NavBar/>
     <div className='container'>
 
     
@@ -39,6 +39,7 @@ function App() {
         <Route path = "/" element={<Home/>}/>
       </Routes>
     </div>
+    
   </>
   )
 }

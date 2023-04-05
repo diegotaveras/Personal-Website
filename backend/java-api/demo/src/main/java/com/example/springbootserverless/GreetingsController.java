@@ -1,4 +1,4 @@
-package com.example.controllers;
+package com.example.springbootserverless;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,9 +18,9 @@ public class GreetingsController {
      * @param name the name to greet
      * @return greeting text
      */
-    // @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-    // @ResponseStatus(HttpStatus.OK)
-    // public String greetingText(@PathVariable String name) {
-    //     return "Hello " + name + "!";
-    // }
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public String greetingText(@PathVariable String name) {
+        return "Hello " + name + "!";
+    }
 }
