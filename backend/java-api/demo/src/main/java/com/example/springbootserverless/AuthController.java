@@ -63,9 +63,10 @@ public class AuthController {
     private static final URI redirectURI = SpotifyHttpManager.makeUri("http://localhost:8000/api/get-user-code/");
     private String code = "";
 
+    private static Secret secret = new Secret();
     private static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
-    .setClientId("01a5a5acf2c241f2aa7f38695368c12c")
-    .setClientSecret("ee96c0417592482f87b2186fadaa32ea")
+    .setClientId(secret.clientID)
+    .setClientSecret(secret.clientSecret)
     .setRedirectUri(redirectURI)
     .build();
 
@@ -121,28 +122,7 @@ public class AuthController {
             System.out.println("Something's wrong" + e.getMessage());
         }
         return new ResponseEntity<>(new PlaylistSimplified[0], HttpStatus.OK);
-}
-
-
-
-    // @GetMapping(value = "user-playlists")
-    // public static ResponseEntity<PlaylistSimplified[]> getUserPlaylists() {
-        
-    //     final GetListOfCurrentUsersPlaylistsRequest getListOfCurrentUsersPlaylistsRequest = spotifyApi.getListOfCurrentUsersPlaylists()
-    //     .limit (10)
-    //     .offset(0).build();
-    //     try {
-    //         final Paging<PlaylistSimplified> playlistPaging = getListOfCurrentUsersPlaylistsRequest.execute();
-            
-    //         return new ResponseEntity<PlaylistSimplified[]> (playlistPaging.getItems(), HttpStatus.CREATED);
-
-    //     } catch (Exception e) {
-    //         System.out.println("Something's wrong" + e.getMessage());
-    //     }
-        
-    //     return new ResponseEntity<PlaylistSimplified[]> (new PlaylistSimplified[0], HttpStatus.CREATED);
-    // }
-
+    }
     
     @GetMapping(value = "user-playlists/{id}")
     public PlaylistTrack[] getPlaylistTracks(@PathVariable String id) {
