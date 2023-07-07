@@ -27,34 +27,34 @@ import org.apache.hc.core5.http.ParseException;
 
 import java.io.IOException;
 import java.net.URI;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionException;
+
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
+
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpHeaders;
+
 import org.springframework.web.bind.annotation.RequestHeader;
 
+import org.springframework.http.MediaType;
 
 
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 
-
-
-
-
-
-// @CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping(value = "/api")
+@EnableWebMvc
 
                                     // This controls/maps all calls to the Spotify API. The class contains the auth token in the SpotifyAPI object which allows user calls to the API.
 public class AuthController {
@@ -69,22 +69,23 @@ public class AuthController {
     .setRedirectUri(redirectURI)
     .build();
 
-    @GetMapping("login")
+    @GetMapping(value = "login")
     @ResponseBody
-    public String spotifyLogin() {
+    public ResponseEntity<String> spotifyLogin() {
         AuthorizationCodeUriRequest authorizationCodeUriRequest = spotifyApi.authorizationCodeUri()
         .scope("user-read-private, user-read-email, playlist-read-private, playlist-read-collaborative")
         .show_dialog(true)
         .build();
-        
+        HttpHeaders responseHeaders = new HttpHeaders();
+        // responseHeaders.set("Access-Control-Allow-Origin", "http://localhost:3000");
         final URI uri = authorizationCodeUriRequest.execute();
         System.out.println(uri.toString());
-        return uri.toString();
+        return new ResponseEntity<String>(uri.toString(),responseHeaders,HttpStatus.CREATED);
 
     }
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("get-user-code")
-    public String getSpotifyUserCode(@RequestParam("code") String userCode, HttpServletResponse response) throws IOException {
+    public ResponseEntity<String> getSpotifyUserCode(@RequestParam("code") String userCode) throws IOException {
         code = userCode;
         AuthorizationCodeRequest authorizationCodeRequest = spotifyApi.authorizationCode(code).build();
 
@@ -98,28 +99,49 @@ public class AuthController {
         } catch (IOException | SpotifyWebApiException | org.apache.hc.core5.http.ParseException e) {
             System.out.println("Error: " + e.getMessage());
         }
-        response.sendRedirect("http://localhost:3000/user-playlists");
-        return spotifyApi.getAccessToken();
-    }
+        String redirectUrl = "http://localhost:3000/user-playlists";
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Location", redirectUrl);
 
 
+        return new ResponseEntity<>(userCode,headers, HttpStatus.FOUND);
+    }   
+
+    
     @GetMapping(value = "user-playlists")
-    public PlaylistSimplified[] getUserPlaylists() {
-        
+    public ResponseEntity<PlaylistSimplified[]> getUserPlaylists() {
         final GetListOfCurrentUsersPlaylistsRequest getListOfCurrentUsersPlaylistsRequest = spotifyApi.getListOfCurrentUsersPlaylists()
-        .limit (10)
-        .offset(0).build();
+                .limit(10)
+                .offset(0)
+                .build();
         try {
             final Paging<PlaylistSimplified> playlistPaging = getListOfCurrentUsersPlaylistsRequest.execute();
-
-            return playlistPaging.getItems();
-
+            return new ResponseEntity<>(playlistPaging.getItems(), HttpStatus.OK);
         } catch (Exception e) {
             System.out.println("Something's wrong" + e.getMessage());
         }
+        return new ResponseEntity<>(new PlaylistSimplified[0], HttpStatus.OK);
+}
+
+
+
+    // @GetMapping(value = "user-playlists")
+    // public static ResponseEntity<PlaylistSimplified[]> getUserPlaylists() {
         
-        return new PlaylistSimplified[0];
-    }
+    //     final GetListOfCurrentUsersPlaylistsRequest getListOfCurrentUsersPlaylistsRequest = spotifyApi.getListOfCurrentUsersPlaylists()
+    //     .limit (10)
+    //     .offset(0).build();
+    //     try {
+    //         final Paging<PlaylistSimplified> playlistPaging = getListOfCurrentUsersPlaylistsRequest.execute();
+            
+    //         return new ResponseEntity<PlaylistSimplified[]> (playlistPaging.getItems(), HttpStatus.CREATED);
+
+    //     } catch (Exception e) {
+    //         System.out.println("Something's wrong" + e.getMessage());
+    //     }
+        
+    //     return new ResponseEntity<PlaylistSimplified[]> (new PlaylistSimplified[0], HttpStatus.CREATED);
+    // }
 
     
     @GetMapping(value = "user-playlists/{id}")

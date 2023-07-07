@@ -11,9 +11,10 @@ const getSpotifyUserLogin = async () => {
   // http://ec2-34-218-50-216.us-west-2.compute.amazonaws.com:8000
   // 54.201.222.75:8000
   try {
-    const response = await axios.get("http://54.201.222.75:8000/api/login");
+    const response = (await axios.get("http://localhost:8000/api/login"));
     // response.header("Access-Control-Allow-Origin", "*");
     const url = response.data;
+    console.log(url)
     window.location.href = url;
   } catch (error) {
     console.error(error);
