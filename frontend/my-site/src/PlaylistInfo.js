@@ -85,7 +85,7 @@ export default function PlaylistInfo() {
     const {id} = useParams();
         const {id2} = useParams();
         useEffect(() => {
-          fetch(`http://localhost:8000/api/user-playlists/${id}`)
+          fetch(`http://localhost:8000/api/user-playlists/${id}` + "/?user=" + localStorage.getItem("user_id"))
           .then(response => response.json())
           .then(data=> {
             console.log(data)
@@ -100,9 +100,9 @@ export default function PlaylistInfo() {
 
 
     
-
+    // https://esefee855k.execute-api.us-east-1.amazonaws.com/Prod
     useEffect(() => {
-        fetch(`http://localhost:8000/api/user-playlists/${id}/stats`)
+        fetch(`http://localhost:8000/api/user-playlists/${id}/stats` + "/?user=" + localStorage.getItem("user_id"))
         .then(response => response.json())
         .then(data=> {
           console.log(data)

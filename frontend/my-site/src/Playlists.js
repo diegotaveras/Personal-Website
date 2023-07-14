@@ -2,12 +2,21 @@ import React from "react";
 
 import axios from "axios";
 import {useState, useEffect} from "react";
+import {useLocation} from "react-router-dom"
+import Authorize from "./Authorize";
 
 export default function Playlists() {
     const  [userPlaylists, setUserPlaylists] = useState();
-  
+
+    
+    // const config = {
+    //     headers: {
+    //       Authorization: `Bearer ${token}`
+    //     }
+    //   };
+    // https://esefee855k.execute-api.us-east-1.amazonaws.com/Prod
     useEffect(() => {
-      fetch("http://localhost:8000/api/user-playlists")
+      fetch("http://localhost:8000/api/user-playlists/?user=" + localStorage.getItem("user_id"))
       .then(response => response.json())
       .then(data=> {
         console.log(data)
@@ -25,9 +34,7 @@ export default function Playlists() {
                 })
             ):
             (
-                <h1>
-                    Loading...
-                </h1>
+               "loading"
             )}
         </div>
     );

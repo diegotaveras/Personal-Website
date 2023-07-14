@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Playlists from './Playlists';
 import PlaylistInfo from './PlaylistInfo';
 import TrackStats from './TrackStats';
-
+import Authorize from './Authorize';
 function App() {
 
 
@@ -25,6 +25,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path = "/contact" element= {<Contact/>}/>
+      </Routes>
+      <Routes>
+        <Route path = "/authorize" element= {<Authorize/>}/>
       </Routes>
       <Routes>
         <Route path = "/user-playlists" element= {<Playlists/>}/>

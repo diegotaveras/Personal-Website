@@ -4,13 +4,13 @@ import axios from "axios";
 import {useState, useEffect} from "react";
 
 import trackStats from './App.css'
-
+// localStorage.se
 export default function TrackStats() {
     const [trackStats, setTrackStats] = useState();
-  
+    // https://esefee855k.execute-api.us-east-1.amazonaws.com/Prod
     const { id, id2 } = useParams();
     useEffect(() => {
-      fetch(`http://localhost:8000/api/user-playlists/${id}/${id2}`)
+      fetch(`http://localhost:8000/api/user-playlists/${id}/${id2}`+ "/?user=" + localStorage.getItem("user_id"))
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
