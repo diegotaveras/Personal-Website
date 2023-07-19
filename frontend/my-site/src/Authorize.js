@@ -12,14 +12,14 @@ export default function Authorize() {
     console.log("testing" + code)
     const [userCode, setUserCode] = useState(null);
     const [redirectHeaders, setRedirectHeaders] = useState(null);
-    // https://esefee855k.execute-api.us-east-1.amazonaws.com/Prod
+    // 
     const userId = localStorage.getItem("user_id");
     if (!userId) {
       const uuid = uuidv4();
       localStorage.setItem("user_id", uuid);
     }
     useEffect(() => {
-      fetch("http://localhost:8000/api/authorize/?code=" + code + "&user=" + localStorage.getItem("user_id"))
+      fetch("https://esefee855k.execute-api.us-east-1.amazonaws.com/Prod/api/authorize/?code=" + code + "&user=" + localStorage.getItem("user_id"))
         .then(response => {
         //     console.log(response);
         //   // Extract the headers from the response object

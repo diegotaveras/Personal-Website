@@ -1,0 +1,29 @@
+.playlist-container {
+    display: flex;
+    flex-direction: row-reverse;
+    
+  }
+  
+  .playlists {
+    
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    position: relative;
+    align-items: left;
+    height:100%;
+    width: 100%;
+    background-color: #1DB954;
+    font-family: Arial, sans-serif;
+    color:#1DB954;
+    flex: 1;
+  }
+  .playlists li{
+    font-size:xx-large;
+    margin-bottom: 2.5%;
+  }
+  .playlists a{
+    text-decoration: none;
+    color: black;
+  }

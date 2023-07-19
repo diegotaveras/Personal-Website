@@ -1,0 +1,28 @@
+.playlists {
+    padding-left: 5%;
+    padding-top: 5%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    position: relative;
+    align-items: left;
+    height:100%;
+    width: 100%;
+    background-color: #1DB954;
+    font-family: Arial, sans-serif;
+    color:#1DB954;
+    flex: 1;
+  }
+  
+.playlist-averages {
+    display: inline-block;
+    height: 20%;
+    width: 20%;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+  }
+  
+  .playlist-averages h1 {
+    color:#1DB954;
+  }

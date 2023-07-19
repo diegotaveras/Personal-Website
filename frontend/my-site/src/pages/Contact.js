@@ -1,7 +1,7 @@
 import React from "react";
-import github_logo from './images/github-mark.png';
-import linkedin_logo from './images/linked-in-logo.png'
-import mail_logo from './images/mail-logo.png'
+import github_logo from '../images/github-mark.svg';
+import linkedin_logo from '../images/linked-in-logo.png'
+import mail_logo from '../images/mail-logo.png'
 
 
 
@@ -16,9 +16,10 @@ export default function Contact() {
     </div>
     <div>
     <ul>
+    
         <li>
             <a href="https://github.com/diegotaveras" target="_blank" rel="noopener noreferrer">
-                <img src={github_logo} height="100px" alt="Github"></img>
+            <img src={github_logo} width="64" height="64"></img>
             </a>
 
         </li>

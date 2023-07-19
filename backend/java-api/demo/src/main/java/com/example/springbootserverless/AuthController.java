@@ -1,9 +1,7 @@
 package com.example.springbootserverless;
 
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
+
 import java.util.ArrayList;
 import se.michaelthelin.spotify.model_objects.specification.Paging;
 import se.michaelthelin.spotify.model_objects.specification.PlaylistSimplified;
@@ -12,31 +10,19 @@ import se.michaelthelin.spotify.SpotifyApi;
 import se.michaelthelin.spotify.SpotifyHttpManager;
 import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
 import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
-import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeRefreshRequest;
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeRequest;
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeUriRequest;
-import se.michaelthelin.spotify.model_objects.specification.Episode;
-import se.michaelthelin.spotify.model_objects.specification.Paging;
+
 import se.michaelthelin.spotify.model_objects.specification.PlaylistTrack;
 import se.michaelthelin.spotify.model_objects.specification.Track;
 import se.michaelthelin.spotify.requests.data.playlists.GetPlaylistsItemsRequest;
 import se.michaelthelin.spotify.requests.data.tracks.GetAudioFeaturesForTrackRequest;
-// import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
-// import software.amazon.awssdk.services.dynamodb.model.GetItemResponse;
-// import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
-// import software.amazon.awssdk.services.dynamodb.model.PutItemResponse;
-import software.amazon.awssdk.services.secretsmanager.SecretsManagerClient;
-import software.amazon.awssdk.services.secretsmanager.model.GetSecretValueRequest;
-import software.amazon.awssdk.services.secretsmanager.model.GetSecretValueResponse;
+
+
 import se.michaelthelin.spotify.model_objects.specification.AudioFeatures;
 import se.michaelthelin.spotify.requests.data.tracks.GetAudioFeaturesForSeveralTracksRequest;
 import se.michaelthelin.spotify.requests.data.users_profile.GetCurrentUsersProfileRequest;
 import se.michaelthelin.spotify.model_objects.specification.User;
-
-// import se.michaelthelin.spotify.requests.data.playlists.GetPlaylistsItems;
-
-import org.apache.hc.core5.http.ParseException;
-
 
 import java.io.IOException;
 import java.net.URI;
@@ -51,56 +37,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpHeaders;
 
-import software.amazon.awssdk.core.waiters.Waiter;
-import software.amazon.awssdk.core.waiters.WaiterResponse;
 
-import org.springframework.web.bind.annotation.RequestHeader;
-
-import org.springframework.http.MediaType;
-
-
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.security.Keys;
-
-import com.amazonaws.regions.Region;
-import com.amazonaws.regions.Regions;
-
-// import software.amazon.awssdk.services.dynamodb.DynamoDb;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
-import com.amazonaws.services.dynamodbv2.document.DynamoDB;
-import com.amazonaws.services.dynamodbv2.document.Item;
-import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
-import com.amazonaws.services.dynamodbv2.document.Table;
-import com.amazonaws.services.dynamodbv2.document.spec.GetItemSpec;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-// import com.amazonaws.services.dynamodbv2.document.Table;
-// import com.amazonaws.serverless.dynamodb
-// import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
-// import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
-
-
-// import software.amazon.awssdk.services.dynamodb.model.GetItemResponse;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.amazonaws.secretsmanager.caching.SecretCache;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -265,6 +208,7 @@ public class AuthController {
             HashMap<String, Object> result = new HashMap<>();
             result.put("artists", track.getArtists());
             result.put("name", track.getName());
+            result.put("pic", track.getAlbum().getImages()[0]);
             result.put("acousticness", audioFeatures.getAcousticness());
             result.put("danceability", audioFeatures.getDanceability());
             result.put("energy", audioFeatures.getEnergy());

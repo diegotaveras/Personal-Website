@@ -7,13 +7,9 @@ import {useState, useEffect} from "react";
 
 
 const getSpotifyUserLogin = async () => {
-  // http://localhost:8000
-  // http://ec2-34-218-50-216.us-west-2.compute.amazonaws.com:8000
-  // 54.201.222.75:8000
   // https://esefee855k.execute-api.us-east-1.amazonaws.com/Prod
   try {
-    const response = (await axios.get("http://localhost:8000/api/login"));
-    // response.header("Access-Control-Allow-Origin", "*");
+    const response = (await axios.get("https://esefee855k.execute-api.us-east-1.amazonaws.com/Prod/api/login"));
     const url = response.data;
     console.log(url)
     window.location.href = url;
@@ -23,39 +19,33 @@ const getSpotifyUserLogin = async () => {
 }
 
 
-// const getSpotifyUserLogin = async () => {
-//   try {
-//     const response = await fetch("http://ec2-54-187-60-185.us-west-2.compute.amazonaws.com:8000/api/login", {
-//       method: 'GET',
-//       mode: 'no-cors',
-//       headers:{
-//         "Access-Control-Allow-Headers" : "Content-Type",
-//         "Access-Control-Allow-Origin": "https://localhost:3000",
-//         "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
-//       }
-//     })
-//     const url = await response.json();
-//     window.location.href = url;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+
 
 
 export default function Projects() {
   
   return (
-    <div className="project">
-      <h1>
-        Welcome to my Spotify playlist analyzer, made possible by Spotify Web API!
-      </h1>
-
-      <div className="sign-in">
-        <button onClick={getSpotifyUserLogin} className="sign-in-btn">
-          Sign In
-        </button>
-      </div>
-    </div>
+  <div className="projects">
+    <div className="project-card">
+  <div className="project-description">
+    <h2>Welcome to my Spotify Playlist Analyzer, made possible by Spotify Web API!</h2>
+  </div>
+  <div className="project-buttons">
+    <button onClick={getSpotifyUserLogin} >
+      Sign In
+    </button>
+  </div>
+  <div className="project-description">
+    <h1>This app allows you to sign in to your Spotify account using the Oauth2.0 authorization flow. 
+      You will be able to view your playlists and the average audio features of each of your playlists, as well as the individual values for each song. 
+      Audio features are a set of values that are used for recommendation and curation purposes by Spotify. 
+      Viewing them may give you an insight into the overall emotions, energy, and vibes that you convey through your playlists! </h1>
+  </div>
+  <div className="project-description">
+    <h1> More updates to this app are coming soon! </h1>
+  </div>
+</div>
+</div>
   );
 }
 
