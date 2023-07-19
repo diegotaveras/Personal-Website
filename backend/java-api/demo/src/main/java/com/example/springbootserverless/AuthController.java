@@ -46,7 +46,7 @@ import org.springframework.http.HttpHeaders;
 
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://dataveras.net")
 @RestController
 @EnableWebMvc
 @RequestMapping(value = "/api")
@@ -56,7 +56,7 @@ import org.springframework.http.HttpHeaders;
 public class AuthController {
 
     String code = "";
-    final URI redirectURI = SpotifyHttpManager.makeUri("http://localhost:3000/authorize/");
+    final URI redirectURI = SpotifyHttpManager.makeUri("http://dataveras.net/authorize/");
     String TABLE_NAME = "AuthTokens";
    
 
@@ -84,7 +84,7 @@ public class AuthController {
     }
 
     
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://dataveras.net")
     @GetMapping("authorize")
     public ResponseEntity<String> getSpotifyUserCode(@RequestParam("code") String userCode, @RequestParam("user") String userId, HttpServletRequest request) throws IOException {
         code = userCode;
