@@ -12,7 +12,6 @@ export default function Authorize() {
     console.log("testing" + code)
     const [userCode, setUserCode] = useState(null);
     const [redirectHeaders, setRedirectHeaders] = useState(null);
-    // 
     const userId = localStorage.getItem("user_id");
     if (!userId) {
       const uuid = uuidv4();
@@ -22,15 +21,13 @@ export default function Authorize() {
       fetch("https://esefee855k.execute-api.us-east-1.amazonaws.com/Prod/api/authorize/?code=" + code + "&user=" + localStorage.getItem("user_id"))
         .then(response => {
         //     console.log(response);
-        //   // Extract the headers from the response object
         //   const headers = response.headers;
         //     console.log(headers.get("Authorization"))
-        //   // Set the redirect headers in the state
+       
           setUserCode(code)
           setRedirectHeaders(response.headers)
           console.log("headers be like:"+  JSON.stringify(response.headers))
     
-          // Process the response data if needed
         return response.json();
     })
         .then(data => {
@@ -38,7 +35,6 @@ export default function Authorize() {
           setUserCode(data);
         })
         .catch(error => {
-          // Handle any errors
         });
     }, []);
     
@@ -56,6 +52,5 @@ export default function Authorize() {
       );
     }
     
-    // Render loading or fallback UI while waiting for the API call to complete
     return <div>Loading...</div>;
 }
