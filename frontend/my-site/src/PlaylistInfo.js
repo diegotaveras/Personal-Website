@@ -95,37 +95,38 @@ const [averages, setAverages] = useState({
   
     
 
-      return (
-        <div className="playlist-container">
-            
-            <div className="playlists">
-                
-                {playlistInfo ? (
-                    playlistInfo.map((playlistsResult) => {
-                        const url = `http://localhost:3000/user-playlists/${id}/${playlistsResult.track.id}`;
-                        return <li key= {playlistsResult.track.id}> <a href = {url}> {playlistsResult.track.name}</a></li>
-                    })
-                ):
-                (
-                    <h1>
-                        Loading...
-                    </h1>
-                )}
-            </div>
-            <div className="playlist-averages">
-              <h1>Averages:</h1>
+  return (
+    <div className="playlist-container">
+        
+      <div className="playlists">
+          
+          {playlistInfo ? (
+              playlistInfo.map((playlistsResult) => {
+                  const url = `user-playlists/${id}/${playlistsResult.track.id}`;
+                  return <li key= {playlistsResult.track.id}> <a href = {url}> {playlistsResult.track.name}</a></li>
+              })
+          ):
+          (
+              <h1>
+                  Loading...
+              </h1>
+          )}
+      </div>
+      <div className="playlist-averages">
+        <h1>Averages:</h1>
 
-              <h2>
-          <PopUp
-            showPopUp={openedPopUpIndex === 0}
-            togglePopUp={() => togglePopUp(0)}
-            coords={mousePos}
-            desc="The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks.  Values typical range between -60 and 0 db."
-          >
-            Loudness: {averages["loudness"].toFixed(2)}
-          </PopUp>
-          </h2>
-              <h2>
+        <h2 className="">
+        <PopUp
+          showPopUp={openedPopUpIndex === 0}
+          togglePopUp={() => togglePopUp(0)}
+          coords={mousePos}
+          desc="The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks.  Values typical range between -60 and 0 db."
+        >
+          Loudness: {averages["loudness"].toFixed(2)}
+        </PopUp>
+        </h2>
+
+        <h2>
           <PopUp
             showPopUp={openedPopUpIndex === 1}
             togglePopUp={() => togglePopUp(1)}
@@ -216,8 +217,8 @@ const [averages, setAverages] = useState({
           </PopUp>
         </h2>
 
-                
-            </div>
-        </div>
-      )
+          
+      </div>
+  </div>
+  )
 }
