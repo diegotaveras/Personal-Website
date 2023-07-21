@@ -102,7 +102,7 @@ const [averages, setAverages] = useState({
           
           {playlistInfo ? (
               playlistInfo.map((playlistsResult) => {
-                  const url = `user-playlists/${id}/${playlistsResult.track.id}`;
+                  const url = `${id}/${playlistsResult.track.id}`;
                   return <li key= {playlistsResult.track.id}> <a href = {url}> {playlistsResult.track.name}</a></li>
               })
           ):
