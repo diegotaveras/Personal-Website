@@ -9,7 +9,6 @@
 }
 
 .popup-button {
-    /* Add any styling to make it look like a <p> tag */
     display: inline;
     font-size: 1rem;
     font-weight: normal;
@@ -18,7 +17,6 @@
     background: none;
     border: none;
     cursor: pointer;
-    /* Add any other styles you want to make it look like a <p> tag */
   }
 
 .popup-card {

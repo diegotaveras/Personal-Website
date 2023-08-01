@@ -12,25 +12,29 @@ import TrackStats from './TrackStats';
 import Authorize from './Authorize';
 function App() {
 
-  const host = "jello test";
+  
 
   return (
     <>
+    <div className='app'>
+
+      
     <NavBar/>
 
-    <div className='container'>
-      <Routes>
-        <Route path = "/projects" element= {<Projects/>}/>
-        <Route path = "/contact" element= {<Contact/>}/>
-        <Route path = "/authorize" element= {<Authorize/>}/>
-        <Route path = "/user-playlists" element= {<Playlists/>}/>
-        <Route path = "/user-playlists/:id" element= {<PlaylistInfo/>}/>
-        <Route path = "/user-playlists/:id/:id2" element= {<TrackStats/>}/>
-        <Route path = "/" element={<Home/>}/>
-      </Routes>
+      <div className='container'>
+      
+        <Routes>
+          <Route path = "/projects" element= {<Projects/>}/>
+          <Route path = "/contact" element= {<Contact/>}/>
+          <Route path = "/authorize" element= {<Authorize/>}/>
+          <Route path = "/user-playlists" element= {<Playlists/>}/>
+          <Route path = "/user-playlists/:id" element= {<PlaylistInfo/>}/>
+          <Route path = "/user-playlists/:id/:id2" element= {<TrackStats/>}/>
+          <Route path = "/" element={<Home/>}/>
+        </Routes>
+      </div>
     </div>
-    
-  </>
+    </>
   )
 }
 
