@@ -58,17 +58,17 @@ function NavBar() {
   
 
     <ul className={`custom-links ${isMenuOpen ? '' : 'hidden'}`}>
-            <CustomLink to="/"> Home </CustomLink>
-            <CustomLink to="/projects"> Projects </CustomLink>
-            <CustomLink to="/resume"> Resume </CustomLink>
-        
-            
-        
-            {/* <CustomLink to="/contact"> Contact </CustomLink> */}
+          <CustomLink to="/"> Home </CustomLink>
+          <CustomLink to="/projects"> Projects </CustomLink>
+          <CustomLink to="/resume"> Resume </CustomLink>
+      
+          
+      
+          {/* <CustomLink to="/contact"> Contact </CustomLink> */}
         
     </ul>
     <button className="menu-button" onClick={toggleMenu}>
-    <img src={hamburger} height="30px" alt="Github"></img>
+    <img src={hamburger} height="27px" alt="Github"></img>
     </button> 
 
   </nav>

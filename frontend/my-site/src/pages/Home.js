@@ -25,7 +25,7 @@ const particlesLoaded = useCallback(async container => {
       <div className="home">
         {/* <img src={diego} alt="Diego" className="diego-image"/> */}
 
-          <div className='stars'>
+          <div className='particles'>
             <Particles
               id="tsparticles"
               init={particlesInit}
@@ -34,7 +34,7 @@ const particlesLoaded = useCallback(async container => {
                 "fullScreen": { enable: false },
                 "particles": {
                   "number": {
-                    "value": 211,
+                    "value": 400,
                     "density": {
                       "enable": true,
                       "value_area": 800
@@ -87,7 +87,7 @@ const particlesLoaded = useCallback(async container => {
                   },
                   "move": {
                     "enable": true,
-                    "speed": 0.1,
+                    "speed": 0.3,
                     "direction": "none",
                     "random": true,
                     "straight": false,
@@ -139,12 +139,13 @@ const particlesLoaded = useCallback(async container => {
                     }
                   }
                 },
-                "retina_detect": true
+                "retina_detect": false
               }}
             />
         
-              <h1>Hello! I'm Diego </h1>
+              
           </div>
+          <h1 className="hello">Hello! I'm Diego </h1>
           <div className="intro-text">
             <p> Hi! I'm a junior 
                   studying Computer Science at the University of Illinois at Urbana-Champaign <span className="uiuc"> (UIUC)</span> 
