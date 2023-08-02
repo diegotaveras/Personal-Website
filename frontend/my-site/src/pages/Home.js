@@ -2,12 +2,21 @@ import React from "react";
 import diego from "../images/diego.JPG";
 // import resume from "./resources/Diego-Taveras-Resume.pdf";
 import i from "../images/i.png"
+import arrow from "../images/arrow.png"
 import Particles from "react-tsparticles"
-import { useCallback } from "react";
+import { useCallback ,useRef} from "react";
 import { loadFull} from "tsparticles"
 
-export default function Home() {
 
+
+
+
+
+export default function Home() {
+  const ref = useRef(null);
+  const handleClick = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth"});
+  };
 
   const particlesInit = useCallback(async engine => {
     console.log(engine);
@@ -142,11 +151,15 @@ const particlesLoaded = useCallback(async container => {
                 "retina_detect": false
               }}
             />
-        
-              
+            <h1 className="hello">Hello! I'm <span className="diego"> Diego. </span> 
+          <button className="explore" onClick={handleClick}>
+              <img src={arrow} className="arrow" height="20px"></img>  <p>About Me!</p>
+          </button>
+          </h1>   
           </div>
-          <h1 className="hello">Hello! I'm Diego </h1>
-          <div className="intro-text">
+
+          
+          <div ref={ref} className="intro-text">
             <p> Hi! I'm a junior 
                   studying Computer Science at the University of Illinois at Urbana-Champaign <span className="uiuc"> (UIUC)</span> 
                   . My main interests are full-stack software development, cybersecurity, and machine learning.
@@ -157,8 +170,15 @@ const particlesLoaded = useCallback(async container => {
           </div>
                 
         
-        {/* <div className="tech"> 
-        </div> */}
+        <div className="tech"> 
+        <p> Hi! I'm a junior 
+                  studying Computer Science at the University of Illinois at Urbana-Champaign <span className="uiuc"> (UIUC)</span> 
+                  . My main interests are full-stack software development, cybersecurity, and machine learning.
+                  I am from Puerto Rico. As hobbies, I enjoy exercising, listening to music, and playing videogames.
+                  Check the <span className="projects-text"> <a href="/projects">Projects</a> </span>tab to learn more about my projects!
+            </p>
+        </div>
+        
       </div>
       
     );

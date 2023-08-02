@@ -17,9 +17,9 @@ function App() {
   return (
     <>
     <div className='app'>
-
+      <NavBar/>
       
-    <NavBar/>
+    
 
       <div className='container'>
       
