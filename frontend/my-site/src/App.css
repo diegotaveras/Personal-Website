@@ -7,10 +7,9 @@ body {
 }
 
 .app {
-  /* padding-top: 50px; */
-  /* width: 100%; */
-  /* gap: 5%; */
-  position:absolute;
+  
+  position:relative;
+  width:100%;
   height: 100%;
 }
 
@@ -40,7 +39,6 @@ body {
     position: sticky;
     top: 0;
     left: 0;
-    /* width: 100%; */
     background-color: #333;
     color: white;
     display: flex;
@@ -49,7 +47,6 @@ body {
     gap: 1rem;
     padding: 2rem;
     z-index: 100;
-    /* width: 100%; */
     flex-direction: column;
     
   }
@@ -161,41 +158,46 @@ body {
   .particles {
     position:relative;
     width: 100%;
-    min-height: 900px;
-    height:900px;
+    min-height: 950px;
+    height:950px;
     display:flex;
     align-items: center;
-   
+    vertical-align: center;
+    
   }
   .hello {
     position: relative;
     color: whitesmoke;
-    
     font-size: 50px;
     display:inline-block;
-    
-    margin: 0 auto
+    vertical-align: center;
+    align-items: center;
+    margin: 0 auto;
    
   }
   
   
-  .intro-text {
-    
+  .about-me {
     width: 100%;
+    display: flex;
     background-color: #333;
+  }
+  .intro-text {
+    text-align:left;
+    align-content: center;
   }
   
   .intro-text p {
     font-size: large;
-    margin-left: 20%;
+    margin-left: 0%;
     margin-right: 20%;
+    
   
   }
   
   .intro-text a{
     color: inherit;
     text-decoration: none;
-    /* height: 100%; */
    
   }
 }
@@ -416,13 +418,11 @@ body {
 
 .diego-image {
   
-  overflow:"hidden";
-  width: 300px;
-  height: 300px;
-  /* border-radius: 30%; */
-  padding: 3%;
-  aspect-ratio: 3/2;
-  flex:1;
+  width: 200px;
+  aspect-ratio: auto;
+  border-radius: 3%;
+  margin: 5%;
+  margin-top: 2%;
   
 }
 
@@ -438,9 +438,9 @@ body {
   
   height: 100%;
   width: 100%;
-  background-color: #333;
+  background-color: #444;
   color: white;
-  display: flex;
+  display: inline-block;
   /* flex-direction: column; */
   justify-content: space-between;
   text-align: center;
@@ -482,6 +482,25 @@ body {
 .explore p {
   font-size: small;
 }
+
+
+.logos {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+}
+.logo {
+  animation:spin 8s linear infinite;
+}
+
+@keyframes spin { 
+  100% { 
+      -webkit-transform: rotate(360deg); 
+      transform:rotate(360deg); 
+  } 
+}
+
+
 
 
 

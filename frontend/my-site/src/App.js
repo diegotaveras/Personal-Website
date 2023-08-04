@@ -18,21 +18,16 @@ function App() {
     <>
     <div className='app'>
       <NavBar/>
-      
-    
-
-      <div className='container'>
-      
-        <Routes>
-          <Route path = "/projects" element= {<Projects/>}/>
-          <Route path = "/contact" element= {<Contact/>}/>
-          <Route path = "/authorize" element= {<Authorize/>}/>
-          <Route path = "/user-playlists" element= {<Playlists/>}/>
-          <Route path = "/user-playlists/:id" element= {<PlaylistInfo/>}/>
-          <Route path = "/user-playlists/:id/:id2" element= {<TrackStats/>}/>
-          <Route path = "/" element={<Home/>}/>
-        </Routes>
-      </div>
+            
+      <Routes>
+        <Route path = "/projects" element= {<Projects/>}/>
+        <Route path = "/contact" element= {<Contact/>}/>
+        <Route path = "/authorize" element= {<Authorize/>}/>
+        <Route path = "/user-playlists" element= {<Playlists/>}/>
+        <Route path = "/user-playlists/:id" element= {<PlaylistInfo/>}/>
+        <Route path = "/user-playlists/:id/:id2" element= {<TrackStats/>}/>
+        <Route path = "/" element={<Home/>}/>
+      </Routes>
     </div>
     </>
   )

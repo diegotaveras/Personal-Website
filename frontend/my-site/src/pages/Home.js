@@ -4,9 +4,9 @@ import diego from "../images/diego.JPG";
 import i from "../images/i.png"
 import arrow from "../images/arrow.png"
 import Particles from "react-tsparticles"
-import { useCallback ,useRef} from "react";
+import { useCallback ,useRef, useLayoutEffect, useState, useEffect} from "react";
 import { loadFull} from "tsparticles"
-
+import Logos from "../Logos";
 
 
 
@@ -14,10 +14,18 @@ import { loadFull} from "tsparticles"
 
 export default function Home() {
   const ref = useRef(null);
-  const handleClick = () => {
-    ref.current?.scrollIntoView({ behavior: "smooth"});
-  };
+  const ref2 = useRef(null);
 
+  const handleClick = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "start"});
+  };
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
+  useLayoutEffect(() => {
+    setWidth(ref2.current?.offsetWidth);
+    setHeight(ref2.current?.offsetHeight);
+    console.log(ref2.current?.offsetWidth)
+  }, []);
   const particlesInit = useCallback(async engine => {
     console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -26,17 +34,19 @@ export default function Home() {
     //await loadFull(engine);
     await loadFull(engine);
 }, []);
-
 const particlesLoaded = useCallback(async container => {
     await console.log(container);
 }, []);
     return (
+      
       <div className="home">
-        {/* <img src={diego} alt="Diego" className="diego-image"/> */}
 
-          <div className='particles'>
+
+          <div ref={ref2} className='particles'>
+          {/* <Logos max_width={1000}max_height={height}></Logos> */}
+
             <Particles
-              id="tsparticles"
+              id="tsparticles" 
               init={particlesInit}
               loaded={particlesLoaded}
               options={{
@@ -151,26 +161,36 @@ const particlesLoaded = useCallback(async container => {
                 "retina_detect": false
               }}
             />
+
             <h1 className="hello">Hello! I'm <span className="diego"> Diego. </span> 
-          <button className="explore" onClick={handleClick}>
-              <img src={arrow} className="arrow" height="20px"></img>  <p>About Me!</p>
-          </button>
-          </h1>   
+            <button className="explore" onClick={handleClick}>
+                <img src={arrow} className="arrow" height="20px"></img>  <p>About Me!</p>
+            </button>
+            </h1>   
           </div>
 
-          
-          <div ref={ref} className="intro-text">
-            <p> Hi! I'm a junior 
-                  studying Computer Science at the University of Illinois at Urbana-Champaign <span className="uiuc"> (UIUC)</span> 
-                  . My main interests are full-stack software development, cybersecurity, and machine learning.
-                  I am from Puerto Rico. As hobbies, I enjoy exercising, listening to music, and playing videogames.
-                  Check the <span className="projects-text"> <a href="/projects">Projects</a> </span>tab to learn more about my projects!
-            </p>
+          <div className="about-me">
+          <img src={diego} className="diego-image"></img>
+            <div ref={ref} className="intro-text">
+              <h1>
+                About me
+              </h1>
+              <p> Hi! I'm a junior 
+                    studying Computer Science at the University of Illinois at Urbana-Champaign <span className="uiuc"> (UIUC)</span> 
+                    . My main interests are full-stack software development, cybersecurity, and machine learning.
+                    I am from Puerto Rico. As hobbies, I enjoy exercising, listening to music, and playing videogames.
+                    Check the <span className="projects-text"> <a href="/projects">Projects</a> </span>tab to learn more about my projects!
+              </p>
               
+            </div>
           </div>
+          
                 
         
         <div className="tech"> 
+        <h1>
+          Tech
+        </h1>
         <p> Hi! I'm a junior 
                   studying Computer Science at the University of Illinois at Urbana-Champaign <span className="uiuc"> (UIUC)</span> 
                   . My main interests are full-stack software development, cybersecurity, and machine learning.
