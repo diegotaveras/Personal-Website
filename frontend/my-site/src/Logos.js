@@ -14,7 +14,8 @@ function getRandomInt(max) {
 
 
 export default function Logos(props) {
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"></link>
+
     const generateRandomStyle = () => {
         let randomTop = `${((getRandomInt(props.max_height - 100) + 100)/props.max_width) * 100}%`;
         let randomLeft = `${((getRandomInt(props.max_width -100 ) + 100)/props.max_width) * 100}%`;

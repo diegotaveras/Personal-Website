@@ -139,7 +139,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #242424;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -158,8 +158,8 @@ body {
   .particles {
     position:relative;
     width: 100%;
-    min-height: 950px;
-    height:950px;
+    min-height: 700px;
+    height:700px;
     display:flex;
     align-items: center;
     vertical-align: center;
@@ -181,6 +181,9 @@ body {
     width: 100%;
     display: flex;
     background-color: #333;
+  }
+  .about-me h1 {
+    font-size: 6vh;
   }
   .intro-text {
     text-align:left;
@@ -274,7 +277,7 @@ body {
 
 #tsparticles {
   position: absolute;
-  min-height: 900px;
+  min-height: 700px;
   width: 100%;
   height:100%;
 }
@@ -421,8 +424,7 @@ body {
   width: 200px;
   aspect-ratio: auto;
   border-radius: 3%;
-  margin: 5%;
-  margin-top: 2%;
+  margin: 3%;
   
 }
 
@@ -431,9 +433,7 @@ body {
   /* display: inline-block; */
 }
 
-.tech {
-  /* top:100%; */
-  
+.tech {  
   position: relative;
   
   height: 100%;
@@ -447,8 +447,12 @@ body {
   align-items: center;
   gap: 2rem;
   padding: 0 1rem;
-  z-index: 100;
 }
+.tech h1 {
+  font-size:7vh;
+  
+}
+
 .diego {
   color: rgb(61, 61, 223);
   font-weight:1000;
@@ -458,6 +462,7 @@ body {
   filter: invert(100%);
   padding-top: 3%;
 }
+
 
 .explore {
   position: relative;
@@ -475,6 +480,14 @@ body {
   border-style:solid;
 
 }
+.explore:hover{
+  border-color: #1DB954;
+  /* padding: 1%; */
+  transition: all .5s linear;
+  
+
+}
+
 .explore img {
   margin-top:10%
 }
@@ -485,12 +498,13 @@ body {
 
 
 .logos {
-  position:absolute;
+  position:relative;
+  display: flex;
   width: 100%;
   height: 100%;
 }
 .logo {
-  animation:spin 8s linear infinite;
+  /* animation:spin 8s linear infinite; */
 }
 
 @keyframes spin { 
@@ -499,6 +513,30 @@ body {
       transform:rotate(360deg); 
   } 
 }
+
+.footer {
+  position: relative;
+  width: 100%;
+  display:inline-block; 
+  background-color:#252525;
+  height: 15vh;
+ 
+  
+ 
+}
+
+.footer p {
+  /* margin-top: 10vh; */
+  
+}
+
+.logo-label {
+
+}
+
+
+
+
 
 
 

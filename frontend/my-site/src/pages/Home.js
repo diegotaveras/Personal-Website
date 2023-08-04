@@ -4,11 +4,13 @@ import diego from "../images/diego.JPG";
 import i from "../images/i.png"
 import arrow from "../images/arrow.png"
 import Particles from "react-tsparticles"
+import flag from "../images/Puerto_Rico_flag.svg"
 import { useCallback ,useRef, useLayoutEffect, useState, useEffect} from "react";
 import { loadFull} from "tsparticles"
 import Logos from "../Logos";
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"></link>
 
 
 
@@ -17,7 +19,7 @@ export default function Home() {
   const ref2 = useRef(null);
 
   const handleClick = () => {
-    ref.current?.scrollIntoView({ behavior: "smooth", block: "start"});
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "center"});
   };
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
@@ -162,7 +164,7 @@ const particlesLoaded = useCallback(async container => {
               }}
             />
 
-            <h1 className="hello">Hello! I'm <span className="diego"> Diego. </span> 
+            <h1 className="hello">Hello! I'm <span className="diego"> Diego.</span> 
             <button className="explore" onClick={handleClick}>
                 <img src={arrow} className="arrow" height="20px"></img>  <p>About Me!</p>
             </button>
@@ -178,7 +180,7 @@ const particlesLoaded = useCallback(async container => {
               <p> Hi! I'm a junior 
                     studying Computer Science at the University of Illinois at Urbana-Champaign <span className="uiuc"> (UIUC)</span> 
                     . My main interests are full-stack software development, cybersecurity, and machine learning.
-                    I am from Puerto Rico. As hobbies, I enjoy exercising, listening to music, and playing videogames.
+                    I am from Puerto Rico <span><img src={flag} height={18}></img> </span>. I enjoy exercising, listening to music, and playing videogames.
                     Check the <span className="projects-text"> <a href="/projects">Projects</a> </span>tab to learn more about my projects!
               </p>
               
@@ -188,15 +190,31 @@ const particlesLoaded = useCallback(async container => {
                 
         
         <div className="tech"> 
-        <h1>
-          Tech
-        </h1>
-        <p> Hi! I'm a junior 
-                  studying Computer Science at the University of Illinois at Urbana-Champaign <span className="uiuc"> (UIUC)</span> 
-                  . My main interests are full-stack software development, cybersecurity, and machine learning.
-                  I am from Puerto Rico. As hobbies, I enjoy exercising, listening to music, and playing videogames.
-                  Check the <span className="projects-text"> <a href="/projects">Projects</a> </span>tab to learn more about my projects!
-            </p>
+          <h1>
+            Tech
+          </h1>
+          <div className="logos">
+            <div className="logo">
+              <i className="devicon-react-original colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'>React</h3>
+            </div>
+            <i className="devicon-angularjs-plain colored" style={{ fontSize: "100px" }}></i>        
+            <h3 className='logo-label'>Angular</h3>
+
+            <i className="devicon-spring-plain colored" style={{ fontSize: "100px" }}></i>        
+            <h3 className='logo-label'>Spring</h3>
+
+            <i className="devicon-amazonwebservices-original colored" style={{ fontSize: "100px" }}></i>        
+            <h3 className='logo-label'>Amazon Web Services</h3>
+          </div>
+
+          
+        </div>
+
+        <div className="footer"> 
+              <h4> Designed by Diego </h4>
+              <p>Last updated on 8/4/2023</p>
+        
         </div>
         
       </div>

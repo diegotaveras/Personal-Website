@@ -22,6 +22,8 @@
 
     "cors": "^2.8.5",
 
+    "devicon": "^2.15.1",
+
     "react": "^18.2.0",
 
     "react-bootstrap": "^2.7.0",
