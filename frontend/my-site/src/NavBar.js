@@ -1,18 +1,33 @@
 
-import React from 'react';
+import React, { useState, useRef} from 'react';
 
-import { Link , useMatch, useResolvedPath } from "react-router-dom"
+
+import { Link , useMatch,  useResolvedPath } from "react-router-dom"
 import github_logo from './images/github-mark.svg';
 import linkedin_logo from './images/linked-in-logo.png'
 import mail_logo from './images/mail-logo.png'
 import resume from './resources/Diego-Taveras-Resume.pdf'
+import hamburger from './images/hamburger.png'
 
 function NavBar() {
-  return <nav className= "nav">
-    <Link to = "/" className= "site-title">
-        Diego Taveras
+
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
+  return <nav className={`nav ${isMenuOpen ? 'hidden' : ''}`}>
+    
+    <Link to="/" className="site-title">
+      Diego Taveras
     </Link>
-    <ul className='external-links'>
+      
+
+      
+     
+    
+    <ul className={`external-links ${isMenuOpen ? '' : 'hidden'}`}>
         
 
         <li>
@@ -38,16 +53,19 @@ function NavBar() {
     </ul>
   
 
-    <ul className='custom-links'>
-            <CustomLink to="/"> Home </CustomLink>
-            <CustomLink to="/projects"> Projects </CustomLink>
-            <CustomLink to="/resume"> Resume </CustomLink>
-        
-            
-        
-            {/* <CustomLink to="/contact"> Contact </CustomLink> */}
+    <ul className={`custom-links ${isMenuOpen ? '' : 'hidden'}`}>
+          <CustomLink to="/"> Home </CustomLink>
+          <CustomLink to="/projects"> Projects </CustomLink>
+          <CustomLink to="/resume"> Resume </CustomLink>
+      
+          
+      
+          {/* <CustomLink to="/contact"> Contact </CustomLink> */}
         
     </ul>
+    <button className="menu-button" onClick={toggleMenu}>
+    <img src={hamburger} height="27px" alt="Github"></img>
+    </button> 
 
   </nav>
     

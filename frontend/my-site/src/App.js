@@ -1,5 +1,5 @@
 
-import './App.css';
+import './App.scss';
 import NavBar from './NavBar';
 import React from 'react';
 import { Route, Routes} from "react-router-dom"
@@ -12,13 +12,13 @@ import TrackStats from './TrackStats';
 import Authorize from './Authorize';
 function App() {
 
-  const host = "jello test";
+  
 
   return (
     <>
-    <NavBar/>
-
-    <div className='container'>
+    <div className='app'>
+      <NavBar/>
+            
       <Routes>
         <Route path = "/projects" element= {<Projects/>}/>
         <Route path = "/contact" element= {<Contact/>}/>
@@ -29,8 +29,7 @@ function App() {
         <Route path = "/" element={<Home/>}/>
       </Routes>
     </div>
-    
-  </>
+    </>
   )
 }
 
