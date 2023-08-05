@@ -96,20 +96,21 @@ body {
     justify-content: center;
     position:relative;
     width: 100%;
-    min-height: 900px;
-    height:900px;
+    min-height: 700px;
+    height:700px;
     display:flex;
     align-items: center;
+    
    
   }
   .hello {
     position: relative;
     color: whitesmoke;
     text-align: center;
-    vertical-align: middle;
+    vertical-align: center;
     margin: 0 auto;
     font-size: 40px;
-    margin-top: 250px;
+    // margin-top: 250px;
   }
   
   .intro-text {
