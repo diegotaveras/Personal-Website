@@ -1,3 +1,5 @@
+$system-grey: #242424;
+
 * {
   box-sizing:border-box;
 }
@@ -22,7 +24,7 @@ body {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: $system-grey;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -34,12 +36,11 @@ body {
     flex-direction: row;
     
   }
-
   .nav.hidden {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: $system-grey;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -50,11 +51,12 @@ body {
     flex-direction: column;
     
   }
+  
   .nav ul {
     display:none;
   }
   
-  .nav.active {
+  nav.active {
     display:none
   }
 
@@ -76,9 +78,18 @@ body {
   .custom-links {
  
     display: none;
+
+    &.hidden {
+      display:none;
+    }
   }
-  .custom-links.hidden {
-    display:none;
+  .about-me {
+    width: 100%;
+    display: inline;
+    background-color: #333;
+    h1 {
+      font-size: 6vh;
+    }
   }
   
   .particles {
@@ -106,20 +117,21 @@ body {
     /* position:relative; */
     width: 100%;
     background-color: #333;
+    p {
+      font-size: large;
+      margin-left: 20%;
+      margin-right: 20%;
+    
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+     
+    }
   }
   
-  .intro-text p {
-    font-size: large;
-    margin-left: 20%;
-    margin-right: 20%;
   
-  }
-  
-  .intro-text a{
-    color: inherit;
-    text-decoration: none;
-   
-  }
 
   
 }
@@ -139,7 +151,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #242424;
+    background-color: $system-grey;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -181,28 +193,33 @@ body {
     width: 100%;
     display: flex;
     background-color: #333;
+    h1 {
+      font-size: 6vh;
+    }
   }
-  .about-me h1 {
-    font-size: 6vh;
-  }
+  
   .intro-text {
     text-align:left;
     align-content: center;
-  }
-  
-  .intro-text p {
-    font-size: large;
-    margin-left: 0%;
-    margin-right: 20%;
+     p {
+      font-size: large;
+      margin-left: 0%;
+      margin-right: 20%;
+      
     
+    }
+    
+     a {
+      color: inherit;
+      text-decoration: none;
+      
+    }
+
   
   }
   
-  .intro-text a{
-    color: inherit;
-    text-decoration: none;
-   
-  }
+  
+  
 }
 .image {
   display: inline-block;
@@ -219,21 +236,18 @@ body {
 }
 
 .projects {
-  /* top:10;
-  left:0; */
-  height: 100%;
   position: relative;
+  height: 100%;
   width: 100%; 
   color: white;
   background-color:#3889b4;
-  display: flex;
-  justify-content: center;
+  display:flex;
+  padding-bottom: 50%;
+  // justify-content: center;
 }
 .project-card {
   border: 1px solid #ccc;
   border-radius: 4px;
-  
-  
   background-color:#333;
   padding: 5%;
   width: 100%;
@@ -247,9 +261,6 @@ body {
 }
 
 
-
-
-
 .project-description h1 {
   font-size: 18px;
   margin-bottom: 10px;
@@ -258,7 +269,6 @@ body {
 .project-buttons {
   margin-top: 20px;
 }
-
 
 .info {
   
@@ -304,13 +314,13 @@ body {
 
 
 
+
+
 .contact-title {
   color: white;
   align-content: center;
 
 }
-
-
 .contact {
   
   text-align: center;
@@ -319,17 +329,16 @@ body {
   width: 100%; 
   
   background-color: #4c768d;
-}
-.contact li {
+  .contact li {
   
-  padding-top: 5%;
-  padding-bottom: 0%;
-  display: block;
+    padding-top: 5%;
+    padding-bottom: 0%;
+    display: block;
   
-
-
+  }
   
 }
+
 
 
 
@@ -337,44 +346,53 @@ body {
   color: #dc6f30
 }
 
-.nav ul {
-  height:100%;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display:flex;
-  gap: 1rem;
+.nav {
+  ul {
+    height:100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display:flex;
+    gap: 1rem;
+    
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    padding: .25rem;
+    
+  }
+  li {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    height:100%;
+    &.active {
+      background-color: #555;
+      margin: 0;
+    }
+    &:hover {
+      background-color: #777;  
+    }
+  }
   
- 
-}
-.nav li {
-  padding-top: 7px;
-  padding-bottom: 7px;
-  height:100%;
 }
 
 
 
-.nav a {
+    
+    
+
   
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: stretch;
-  padding: .25rem;
-  
-}
-
-.nav li.active {
-  background-color: #555;
-  margin: 0;
-}
 
 
-.nav li:hover {
-  background-color: #777;  
-}
+
+
+
+
+
 
 .sign-in {
   display: flex; 
@@ -478,23 +496,24 @@ body {
   margin-top: 30px;
   border-width: 3px;
   border-style:solid;
-
-}
-.explore:hover{
-  border-color: #1DB954;
-  /* padding: 1%; */
-  transition: all .5s linear;
+  &:hover{
+    border-color: #1DB954;
+    /* padding: 1%; */
+    transition: all .5s linear;
+    
   
+  }
+  
+  img {
+    margin-top:10%
+  }
+  
+  p {
+    font-size: small;
+  }
 
 }
 
-.explore img {
-  margin-top:10%
-}
-
-.explore p {
-  font-size: small;
-}
 
 
 .logos {
@@ -502,9 +521,15 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 5%;
+  padding: 8%;
 }
 .logo {
   /* animation:spin 8s linear infinite; */
+  list-style-type: none;
+  
 }
 
 @keyframes spin { 
@@ -521,14 +546,14 @@ body {
   background-color:#252525;
   height: 15vh;
  
-  
+  p {
+    /* margin-top: 10vh; */
+    
+  }
  
 }
 
-.footer p {
-  /* margin-top: 10vh; */
-  
-}
+
 
 .logo-label {
 

@@ -18,15 +18,11 @@ function NavBar() {
   };
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   return <nav className={`nav ${isMenuOpen ? 'hidden' : ''}`}>
-    {windowSize.current[0] < 401 ? (
-        <Link to="/" className="site-title">
-          Diego
-        </Link>
-      ) : (
-        <Link to="/" className="site-title">
-          Diego Taveras
-        </Link>
-      )}
+    
+    <Link to="/" className="site-title">
+      Diego Taveras
+    </Link>
+      
 
       
      

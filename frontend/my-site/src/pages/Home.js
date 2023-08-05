@@ -171,18 +171,20 @@ const particlesLoaded = useCallback(async container => {
             </h1>   
           </div>
 
-          <div className="about-me">
-          <img src={diego} className="diego-image"></img>
-            <div ref={ref} className="intro-text">
+          <div ref={ref} className="about-me">
+            <img src={diego} className="diego-image"></img>
+            <div className="intro-text">
               <h1>
                 About me
               </h1>
               <p> Hi! I'm a junior 
                     studying Computer Science at the University of Illinois at Urbana-Champaign <span className="uiuc"> (UIUC)</span> 
                     . My main interests are full-stack software development, cybersecurity, and machine learning.
-                    I am from Puerto Rico <span><img src={flag} height={18}></img> </span>. I enjoy exercising, listening to music, and playing videogames.
-                    Check the <span className="projects-text"> <a href="/projects">Projects</a> </span>tab to learn more about my projects!
+                    I am from Puerto Rico <span><img src={flag} height={18}></img> </span>. I enjoy exercising, listening to music, playing guitar and videogames.
+                    
+                    
               </p>
+              <p> Check the <span className="projects-text"> <a href="/projects">Projects</a> </span>tab to learn more about my projects!</p>
               
             </div>
           </div>
@@ -191,30 +193,142 @@ const particlesLoaded = useCallback(async container => {
         
         <div className="tech"> 
           <h1>
-            Tech
+            Tech / Tools
           </h1>
-          <div className="logos">
-            <div className="logo">
+          <ul className="logos">
+            <li className="logo">
               <i className="devicon-react-original colored" style={{ fontSize: "100px" }}></i>
               <h3 className='logo-label'>React</h3>
-            </div>
-            <i className="devicon-angularjs-plain colored" style={{ fontSize: "100px" }}></i>        
-            <h3 className='logo-label'>Angular</h3>
+            </li>
+            <li className="logo">
+              <i className="devicon-angularjs-plain colored" style={{ fontSize: "100px" }}></i>        
+              <h3 cassName='logo-label'>Angular</h3>
+            </li>
+            <li className="logo">
+              <i className="devicon-spring-plain colored" style={{ fontSize: "100px" }}></i>        
+              <h3 className='logo-label'>Spring</h3>
+            </li>
+            <li className="logo">
+              <i className="devicon-amazonwebservices-original colored" style={{ fontSize: "100px" }}></i>        
+              <h3 className='logo-label'>Amazon Web Services</h3>
+            </li>
+           
+            <li className="logo">
+              <i className="devicon-cplusplus-line colored" style={{ fontSize: "100px" }}></i>        
+              <h3 className='logo-label'>C++</h3>
+            </li>
+            <li className="logo">
+              <img height="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+              <h3 className="logo-label"> Python </h3>
+            </li>
 
-            <i className="devicon-spring-plain colored" style={{ fontSize: "100px" }}></i>        
-            <h3 className='logo-label'>Spring</h3>
+            <li className="logo">
+              <img height="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+              <h3 className='logo-label'>Java</h3>
+            </li>  
 
-            <i className="devicon-amazonwebservices-original colored" style={{ fontSize: "100px" }}></i>        
-            <h3 className='logo-label'>Amazon Web Services</h3>
-          </div>
+            <li className="logo">
+              <i class="devicon-typescript-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Typescript </h3>
+            </li>    
+            <li className="logo">
+              <i class="devicon-javascript-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Javascript </h3>
+            </li>  
+            <li className="logo">
+              <i class="devicon-mysql-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> MySQL </h3>
+            </li>    
+               
+            <li className="logo">
+              <i class="devicon-unix-original colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Unix </h3>
+            </li>   
+            <li className="logo">
+              <i class="devicon-django-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Django </h3>
+            </li>  
+            <li className="logo">
+              <i class="devicon-html5-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> HTML5 </h3>
+            </li>  
+            <li className="logo">
+              <i class="devicon-sass-original colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Sass </h3>
+            </li>  
+            <li className="logo">
+              <i class="devicon-css3-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> CSS3 </h3>
+            </li>  
+            <li className="logo">
+              <i class="devicon-mongodb-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> MongoDB </h3>
+            </li>  
+            <li className="logo">
+              <i class="devicon-kotlin-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Kotlin </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-cmake-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> CMake </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-git-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Git </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-docker-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Docker </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-vscode-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> VSCode </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-android-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Android </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-numpy-original colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> NumPy </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-bash-plain" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Bash </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-gradle-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Gradle </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-jupyter-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Jupyter</h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-linux-plain" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Linux </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-networkx-original colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> Networkx </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-npm-original-wordmark colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> npm </h3>
+            </li> 
+            <li className="logo">
+              <i class="devicon-ubuntu-plain colored" style={{ fontSize: "100px" }}></i>
+              <h3 className='logo-label'> ubuntu </h3>
+            </li> 
+                  
+          </ul>
 
           
         </div>
 
         <div className="footer"> 
-              <h4> Designed by Diego </h4>
-              <p>Last updated on 8/4/2023</p>
-        
+          <h4> Designed by Diego </h4>
+          <p>Last updated on 8/4/2023</p>
         </div>
         
       </div>
