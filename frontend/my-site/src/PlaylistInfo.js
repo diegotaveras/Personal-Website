@@ -46,7 +46,6 @@ export default function PlaylistInfo() {
 
   const [openedPopUpIndex, setOpenedPopUpIndex] = useState(-1); // Initialize to -1 (no pop-up open)
 
-  // ...
 
   const togglePopUp = (index) => {
     setOpenedPopUpIndex((prevState) => (prevState === index ? -1 : index));
@@ -98,7 +97,7 @@ const [averages, setAverages] = useState({
   return (
     <div className="playlist-container">
         
-      <div className="playlists">
+      <div className="playlists-info">
           
           {playlistInfo ? (
               playlistInfo.map((playlistsResult) => {

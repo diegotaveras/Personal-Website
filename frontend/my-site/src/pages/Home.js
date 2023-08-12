@@ -199,7 +199,7 @@ const particlesLoaded = useCallback(async container => {
 
         <div className="footer"> 
           <h4> Designed by Diego </h4>
-          <p>Last updated on 8/4/2023</p>
+          <p>Last updated on 8/12/2023</p>
         </div>
         
       </div>

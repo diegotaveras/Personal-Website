@@ -23,15 +23,20 @@ export default function Playlists() {
 
     return (
         <div className="playlists">
-            {userPlaylists ? (
-                userPlaylists.map((playlistsResult) => {
-                    const url = `user-playlists/${playlistsResult.id}`;
-                    return <li key= {playlistsResult.id}> <a href = {url}> {playlistsResult.name}</a></li>
-                })
-            ):
-            (
-               "loading"
-            )}
+            <div className="playlists-list">
+
+                
+                    {userPlaylists ? (
+                        userPlaylists.map((playlistsResult) => {
+                            const url = `user-playlists/${playlistsResult.id}`;
+                            return <a href = {url}> <li className="playlist-card" key= {playlistsResult.id}>{playlistsResult ?  <img src={playlistsResult.images[0] ? playlistsResult.images[0].url : "" } /> : <img src=""></img>} <p>{playlistsResult.name}<body>{playlistsResult.owner.displayName}</body></p></li> </a>
+                        })
+                    ):
+                    (
+                    "loading"
+                    )}
+                
+            </div>
         </div>
     );
 }
