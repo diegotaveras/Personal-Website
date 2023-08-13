@@ -144,6 +144,10 @@ export default function Logos() {
                 <i class="devicon-markdown-original" style={{ fontSize: "100px" }}></i>
                 <h3 className='logo-label'> Markdown </h3>
               </li> 
+              <li className="logo">
+                <i class="devicon-bootstrap-plain" style={{ fontSize: "100px" }}></i>
+                <h3 className='logo-label'> Bootstrap </h3>
+              </li> 
                   
             </ul>
           </>

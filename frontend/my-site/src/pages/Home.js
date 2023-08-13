@@ -8,16 +8,17 @@ import flag from "../images/Puerto_Rico_flag.svg"
 import { useCallback ,useRef, useLayoutEffect, useState, useEffect} from "react";
 import { loadFull} from "tsparticles"
 import Logos from "../Logos";
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"></link>
+import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+// import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "../App.scss"
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
 
 export default function Home() {
   const ref = useRef(null);
   const ref2 = useRef(null);
-
+  
   const handleClick = () => {
     ref.current?.scrollIntoView({ behavior: "smooth", block: "center"});
   };
@@ -39,10 +40,34 @@ export default function Home() {
 const particlesLoaded = useCallback(async container => {
     await console.log(container);
 }, []);
+let mybutton;
+
+  window.onscroll = function () {
+    mybutton = document.getElementById("btn-back-to-top");
+    scrollFunction(mybutton);
+  };
+  
+  function scrollFunction(mybutton) {
+    if (
+      document.body.scrollTop > 500 ||
+      document.documentElement.scrollTop > 500
+    ) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  function backToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
     return (
       
-      <div className="home">
+      
 
+      <div className="home">
+          
 
           <div ref={ref2} className='particles'>
 
@@ -201,9 +226,24 @@ const particlesLoaded = useCallback(async container => {
           <h4> Designed by Diego </h4>
           <p>Last updated on 8/12/2023</p>
         </div>
+        <MDBBtn 
+      onClick={backToTop} 
+      id='btn-back-to-top' 
+      style={{
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        display: "block",
+      }} 
+      className='btn-floating' 
+      color='danger' 
+      size='lg'>
+      <MDBIcon fas icon="arrow-up" />
+    </MDBBtn>
         
       </div>
       
+
     );
   }
   

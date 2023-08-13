@@ -95,14 +95,15 @@ const [averages, setAverages] = useState({
     
 
   return (
-    <div className="playlist-container">
+    <div className="playlists-info">
+      
+      <div className="track-list">
         
-      <div className="playlists-info">
           
           {playlistInfo ? (
-              playlistInfo.map((playlistsResult) => {
-                  const url = `${id}/${playlistsResult.track.id}`;
-                  return <li key= {playlistsResult.track.id}> <a href = {url}> {playlistsResult.track.name}</a></li>
+              playlistInfo.map((tracksResult) => {
+                  const url = `${id}/${tracksResult.track.id}`;
+                  return <a href = {url}> <li className="track-card" key= {tracksResult.track.id}> <img src={tracksResult ? tracksResult.track.album.images[0].url : ""}></img> <p>{tracksResult.track.name} <body>{tracksResult.track.artists[0].name}</body> </p> </li> </a>
               })
           ):
           (
@@ -112,7 +113,7 @@ const [averages, setAverages] = useState({
           )}
       </div>
       <div className="playlist-averages">
-        <h1>Averages:</h1>
+        <h1> Playlist Averages:</h1>
 
         <h2 className="">
         <PopUp
@@ -132,7 +133,7 @@ const [averages, setAverages] = useState({
             coords={mousePos}
             desc="A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic."
           >
-            Acousticness: {averages["loudness"].toFixed(2)}
+            Acousticness: {averages["acousticness"].toFixed(2)}
           </PopUp>
         </h2>
         <h2>

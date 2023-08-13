@@ -10,15 +10,15 @@ import Playlists from './Playlists';
 import PlaylistInfo from './PlaylistInfo';
 import TrackStats from './TrackStats';
 import Authorize from './Authorize';
-function App() {
 
+function App() {
+  
   
 
   return (
     <>
     <div className='app'>
       <NavBar/>
-            
       <Routes>
         <Route path = "/projects" element= {<Projects/>}/>
         <Route path = "/contact" element= {<Contact/>}/>
@@ -30,6 +30,7 @@ function App() {
       </Routes>
     </div>
     </>
+
   )
 }
 
