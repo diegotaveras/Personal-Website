@@ -16,6 +16,7 @@ body {
 }
 ::-webkit-scrollbar {
     width: 0;
+    scrollbar-color: green;
 } 
 
 .container {
@@ -542,7 +543,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   column-gap: 7%;
-  padding: 8%;
+  padding: 4%;
 }
 .logo {
   /* animation:spin 8s linear infinite; */

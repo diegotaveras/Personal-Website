@@ -1,10 +1,4 @@
-.playlist-container {
-    /* display: flex; */
-    flex-direction: row-reverse;
-    background-color: green;
-    padding:0;
-    margin: 0;
-  }
+
 
   .playlist-card {
     border-radius: 5px;

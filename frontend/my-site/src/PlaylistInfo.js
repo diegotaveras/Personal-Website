@@ -97,7 +97,7 @@ const [averages, setAverages] = useState({
   return (
     <div className="playlists-info">
       
-      <div className="track-list">
+      <ul className="track-list">
         
           
           {playlistInfo ? (
@@ -111,7 +111,7 @@ const [averages, setAverages] = useState({
                   Loading...
               </h1>
           )}
-      </div>
+      </ul>
       <div className="playlist-averages">
         <h1> Playlist Averages:</h1>
 
