@@ -1,24 +1,53 @@
 .trackStats {
     /* border-radius: 50px;  */
     /* padding: 15px 32px;  */
-    padding-top: 0%;
+    /* padding-top: 0; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
+    position: relative;
     align-items: center;
+    min-height:100vh;
     height: 100%;
-    width: 100%;
-    background-color: #1DB954;
-    font-family: Arial, sans-serif;
+    width: 100%; 
+    background-color: #151515;
+    /* font-family: Arial, sans-serif; */
+
+   --mask: linear-gradient(to bottom, 
+        rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 70%, 
+        rgba(0,0,0, 0) 95%, rgba(0,0,0, 0) 0
+    ) 100% 50% / 100% 100% repeat-x;
+    
+    -webkit-mask: var(--mask); 
+     mask: var(--mask); 
+     
   }
 
+  
+  .background {
+    position: relative;
+    height:100vh;
+    transition: all 1s linear;
+  }
   .track-info {
     padding: 0;
   }
+  .track-info h2 {
+    color: rgb(109, 106, 106);
+  }
   
   
-
+  .trackStats-card {
+    width: 50%;
+    text-align: center;
+    justify-items: left;
+    background-color: #ccc;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    border-radius: 2%;
+    margin-bottom: 10%;
+  }
   .trackStats h1 {
    /* color: #1DB954; */
 
@@ -26,6 +55,14 @@
   .trackStats p {
     color: white;
  
+  }
+  .trackStats-card img {
+    max-width: 15vw;
+    max-height: 15vh;
+    /* min-height: 100%; */
+    display: relative;
+    aspect-ratio: auto;
+
   }
   
   .trackStats li {

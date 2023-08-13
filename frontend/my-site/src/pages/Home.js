@@ -233,7 +233,7 @@ let mybutton;
         position: "fixed",
         bottom: "20px",
         right: "20px",
-        display: "block",
+        display: "none",
       }} 
       className='btn-floating' 
       color='danger' 

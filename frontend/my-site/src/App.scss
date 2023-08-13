@@ -515,11 +515,11 @@ body {
   margin-top: 30px;
   border-width: 3px;
   border-style:solid;
+  transition: border-color 0.5s linear;
   &:hover{
     border-color: #1DB954;
-    /* padding: 1%; */
-    transition: all .5s linear;
-    
+    transition: border-color 0.5s ease-out ;
+
   
   }
   
