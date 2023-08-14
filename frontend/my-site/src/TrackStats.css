@@ -65,10 +65,10 @@
 
   }
   
-  .trackStats li {
+  .trackStats-card li {
     list-style-type: none;
   }
-  .trackStats ul {
+  .trackStats-card ul {
     list-style-type: none;
-    display: inline
+    display: inline-block;
   }

@@ -20,7 +20,7 @@
   }
 
 .popup-card {
-    border: 1px solid #ccc;
+  border: 1px solid #ccc;
   border-radius: 4px;
   padding: 5px;
   margin-bottom: 20px;
@@ -29,13 +29,12 @@
   padding-right: 2%;
   padding-left: 2%;
 
-  width: fit-content;
+  width:auto;
+  max-width: 50%;
   margin: 10px;
   justify-content:center;
-  justify-self: center;
-  align-self: center;
-  align-content: center;
-  text-align: center;
+  
+  text-align: center; 
   display: flex;
   
 }
@@ -47,15 +46,17 @@
     font-size: 15px;
     margin-bottom: 0px;
     display: inline;
+    color: #1DB954;
     
 
   }
 
 .popup-description p {
-padding-top: 5%;
+/* padding-top: 5%; */
 position:relative;
 font-size: 15px;
 margin-bottom: 0px;
+
 
 
 }
