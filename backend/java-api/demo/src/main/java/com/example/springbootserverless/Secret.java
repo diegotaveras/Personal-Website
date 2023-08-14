@@ -15,10 +15,8 @@ public class Secret {
                 String secret  = cache.getSecretString(secretId);
                 String jsonString = secret;
 
-                        // Create an instance of ObjectMapper
                 ObjectMapper objectMapper = new ObjectMapper();
 
-                // Convert the JSON string to a Map object
                 try {
                         secretMap = objectMapper.readValue(jsonString, Map.class);
 
@@ -36,5 +34,3 @@ public class Secret {
         
     
 }
-// String clientID = "01a5a5acf2c241f2aa7f38695368c12c";
-// String clientSecret = "ee96c0417592482f87b2186fadaa32ea";

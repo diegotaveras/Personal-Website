@@ -3,16 +3,35 @@ import React from "react";
 
 import axios from "axios";
 import {useState, useEffect} from "react";
-
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 import "./PlaylistInfo.css"
 import PopUp from './PopUp';
+import { Radar } from 'react-chartjs-2';
 
-import Radar from 'react-d3-radar';
+ChartJS.register(
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend
+);
+
+
 
 
 export default function PlaylistInfo() {
     const [playlistInfo, setPlaylistInfo] = useState();
     const [averageLoud, setAverageLoud] = useState(0.0);
+    const [qualMap, setQualMap] = useState({});
     // const [averages, setAverages] = useState({});
     
     const {id} = useParams();
@@ -65,8 +84,7 @@ export default function PlaylistInfo() {
       });
 
   }, [])
-
-//    console.log(updated);
+ 
 const [averages, setAverages] = useState({
     loudness: 0.0,
     danceability: 0.0,
@@ -91,17 +109,30 @@ const [averages, setAverages] = useState({
         updatedAverages[key] = sum / stats.length;
       }
       setAverages(updatedAverages);
+      
+    // getting only the qualitative attributes to use on the radar graph
+    const qualMap = new Map();
+    for (const [key, value] of Object.entries(updatedAverages)) {
+      if (key !== 'tempo' && key !== "loudness") {
+        const qualValue = value;
+        qualMap.set(key, qualValue);
+      }
     }
-  }, [playlistInfo, stats]);
+
+    const qualObject = Object.fromEntries(qualMap);
+
+    setQualMap(qualObject);
+    
+  }
+}, [playlistInfo, stats]);
   
     
-
+  
   return (
     <div className="playlists-info">
       
       <ul className="track-list">
         
-          
           {playlistInfo ? (
               playlistInfo.map((tracksResult) => {
                   const url = `${id}/${tracksResult.track.id}`;
@@ -116,53 +147,23 @@ const [averages, setAverages] = useState({
       </ul>
       <div className="playlist-averages">
         <h1> Playlist Averages:</h1>
-
-          <Radar
-  width={1000}
-  height={1000}
-  padding={0}
-  domainMax={1}
-  highlighted={null}
-  
-  onHover={(point) => {
-    if (point) {
-      console.log('hovered over a data point');
-    } else {
-      console.log('not over anything');
-    }
-  }}
-  data={{
-    
-    variables: [
-      // {key: 'loudness', label: 'Loudness'},
-      {key: 'danceability', label: 'Danceability'},
-      {key: 'energy', label: 'Energy'},
-      {key: 'valence', label: 'Valence'},
-      {key: 'instrumentalness', label: 'Instrumentalness'},
-      {key: 'tempo', label: 'Tempo'},
-      {key: 'liveness', label: 'Liveness'},
-      {key: 'acousticness', label: 'Acousticness'},
-      {key: 'speechiness', label: 'Speechiness'},
-
-    ],
-    sets: [
-      {
-        key: 'me',
-        label: 'My Scores',
-        values: {
-          // loudness: averages["loudness"].toFixed(2),
-          danceability: averages["danceability"].toFixed(2),
-          energy: averages["energy"].toFixed(2),
-          valence: averages["valence"].toFixed(2),
-          // tempo: averages["tempo"].toFixed(2),
-          liveness: averages["liveness"].toFixed(2),
-          acousticness: averages["acousticness"].toFixed(2),
-          speechiness: averages["speechiness"].toFixed(2)
+            {console.log(qualMap)}
+            {qualMap ? (
+  <Radar
+    data={{
+      labels: ['Thing 1', 'Thing 2', 'Thing 3', 'Thing 4', 'Thing 5', 'Thing 6'],
+      datasets: [
+        {
+          label: '# of Votes',
+          data: [2, 9, 3, 5, 2, 3],
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1,
         },
-      }
-    ],
-  }}
-/>
+      ],
+    }}
+  />
+) : ""}
         <ul>
 
         
