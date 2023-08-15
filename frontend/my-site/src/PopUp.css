@@ -5,6 +5,7 @@
     padding-top: 50px;
     background-color: aqua;
     position: absolute;
+    transition: all 1s linear;
 
 }
 
@@ -17,6 +18,8 @@
     background: none;
     border: none;
     cursor: pointer;
+
+    transition: all 1s linear;
   }
 
 .popup-card {

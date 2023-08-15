@@ -1,8 +1,7 @@
 import React, { Children } from "react";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useReducer,useRef} from "react";
 
 import "./PopUp.css"
-
 
 
 export default function PopUp(props) {
@@ -13,16 +12,19 @@ export default function PopUp(props) {
   };
 
   const handleButtonClick = (event) => {
-    setPosition({ x: event.clientX - 300  ? event.clientX + 100 : event.clientX +100,  y: event.clientY + 300 < window.screen.availHeight ? event.clientY : event.clientY - 200});
+    setPosition({ x: event.clientX - 300  ? event.clientX : event.clientX +100,  y: event.clientY + 300 < window.screen.availHeight ? event.clientY : event.clientY - 200});
     togglePopUp(); 
   };
  
+ 
 
   return (
+    
     <div>
       <b>
         <button className="popup-button" onClick={handleButtonClick}> {props.children} </button>
       </b>
+      
       {props.showPopUp && (
        
         <div

@@ -126,7 +126,18 @@ const [averages, setAverages] = useState({
   }
 }, [playlistInfo, stats]);
   
-    
+const plugin = {
+
+  id: 'customCanvasBackgroundColor',
+  beforeDraw: (chart, args, options) => {
+    const {ctx} = chart;
+    ctx.save();
+    ctx.globalCompositeOperation = 'destination-over';
+    ctx.fillStyle = options.color || '#99ffff';
+    ctx.fillRect(0, 0, chart.width, chart.height);
+    ctx.restore();
+  }
+};
   
   return (
     <div className="playlists-info">
@@ -148,20 +159,40 @@ const [averages, setAverages] = useState({
       <div className="playlist-averages">
         <h1> Playlist Averages:</h1>
             {console.log(qualMap)}
-            {qualMap ? (
-  <Radar
+            {qualMap["acousticness"] != NaN ? (
+  <Radar options={{
+    transitions: "all 0.5s linear",
+    
+    scales: {
+      
+      
+        "r" : {
+        grid: {
+          color:"blue"
+        },
+        ticks:{
+          display:false,
+          backdropColor:"transparent"
+        }
+      }
+      
+      
+    }
+  }}
     data={{
-      labels: ['Thing 1', 'Thing 2', 'Thing 3', 'Thing 4', 'Thing 5', 'Thing 6'],
+      labels:  ["Acousticness", "Danceability", "Energy", "Valence", "Instrumentalness", "Liveness","Speechiness"],
       datasets: [
         {
-          label: '# of Votes',
-          data: [2, 9, 3, 5, 2, 3],
+          label: 'Value',
+          data: [qualMap["acousticness"], qualMap["danceability"], qualMap["energy"], qualMap["valence"], qualMap["instrumentalness"], qualMap["liveness"], qualMap["speechiness"]],
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'rgba(255, 99, 132, 1)',
           borderWidth: 1,
+          normalized:true
         },
       ],
-    }}
+    }} 
+    plugins={[plugin]}
   />
 ) : ""}
         <ul>
@@ -246,16 +277,6 @@ const [averages, setAverages] = useState({
               desc="Detects the presence of an audience in the recording with a range from 0.0 to 1.0. Higher liveness values represent an increased probability that the track was performed live."
             >
               Liveness: {averages["liveness"].toFixed(2)}
-            </PopUp>
-          </li>
-          <li>
-            <PopUp
-              showPopUp={openedPopUpIndex === 8}
-              togglePopUp={() => togglePopUp(8)}
-              coords={mousePos}
-              desc="A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic."
-            >
-              Acousticness: {averages["acousticness"].toFixed(2)}
             </PopUp>
           </li>
           <li>
