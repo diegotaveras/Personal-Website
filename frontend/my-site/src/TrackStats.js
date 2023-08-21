@@ -69,8 +69,8 @@ export default function TrackStats() {
           {trackStats ?  <img key="album-art" src={trackStats.pic.url} /> : <img src=""></img>}
         
         <div className="track-info">
-            <h1> {trackStats ?  (trackStats.name) : ("none") } </h1>
-            <h2> {trackStats ? (trackStats.artists[0].name) : ("none") } </h2>
+            <h2> {trackStats ?  (trackStats.name) : ("none") } </h2>
+            <h3> {trackStats ? (trackStats.artists[0].name) : ("none") } </h3>
         </div>
         {trackStats ? (
           

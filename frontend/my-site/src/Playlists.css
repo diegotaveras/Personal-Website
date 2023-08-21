@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: row;
     justify-content: left;
-    
+    overflow-y: auto;
     transition: all .25s linear;
     
   }
@@ -65,22 +65,23 @@
   .playlists-list {
     margin:50px;
     list-style-type: none;
-    /* display: flex; */
     justify-content: left;
     position: relative;
     align-items: left;
-    /* height:100%; */
     width: 100%; 
-    /* background-color: #242424; */
     font-family: Arial, sans-serif;
     color:#1DB954;
     /* flex: 1; */
+  }
+  .playlists-list:nth-child(n) {
+    margin: 80px;
   }
   .playlists li{
     width: 100%;
     font-size:xx-large;
     margin-bottom: 5%;
     height: 8%;
+    
   }
   .playlists a{
     text-decoration: none;

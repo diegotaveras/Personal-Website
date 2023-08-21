@@ -9,7 +9,6 @@ import { useCallback ,useRef, useLayoutEffect, useState, useEffect} from "react"
 import { loadFull} from "tsparticles"
 import Logos from "../Logos";
 import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
-// import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "../App.scss"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -22,13 +21,7 @@ export default function Home() {
   const handleClick = () => {
     ref.current?.scrollIntoView({ behavior: "smooth", block: "center"});
   };
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
-  useLayoutEffect(() => {
-    setWidth(ref2.current?.offsetWidth);
-    setHeight(ref2.current?.offsetHeight);
-    console.log(ref2.current?.offsetWidth)
-  }, []);
+  
   const particlesInit = useCallback(async engine => {
     console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets

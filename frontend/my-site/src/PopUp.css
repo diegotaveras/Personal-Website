@@ -16,13 +16,19 @@
     color: whitesmoke;
     text-decoration: none;
     background: none;
-    border: none;
+    border: 1px solid grey;
+    border-radius: 8px;
     cursor: pointer;
-
-    transition: all 1s linear;
+    min-width:12rem;
+    padding: auto;
+    transition: all 0.1s linear;
   }
 
+.popup-button:hover {
+  background-color: #1DB954;
+}
 .popup-card {
+  
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 5px;
@@ -36,7 +42,7 @@
   max-width: 50%;
   margin: 10px;
   justify-content:center;
-  
+  overflow-y: scroll;
   text-align: center; 
   display: flex;
   
@@ -56,6 +62,7 @@
 
 .popup-description p {
 /* padding-top: 5%; */
+color:white;
 position:relative;
 font-size: 15px;
 margin-bottom: 0px;

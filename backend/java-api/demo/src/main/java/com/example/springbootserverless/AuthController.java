@@ -56,7 +56,7 @@ import org.springframework.http.HttpHeaders;
 public class AuthController {
 
     String code = "";
-    final URI redirectURI = SpotifyHttpManager.makeUri("http://localhost:3000/authorize/");
+    final URI redirectURI = SpotifyHttpManager.makeUri("http://dataveras.net/authorize/");
     String TABLE_NAME = "AuthTokens";
    
 
