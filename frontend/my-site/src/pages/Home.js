@@ -1,5 +1,6 @@
 import React from "react";
 import diego from "../images/diego.JPG";
+
 // import resume from "./resources/Diego-Taveras-Resume.pdf";
 import i from "../images/i.png"
 import arrow from "../images/arrow.png"
@@ -11,6 +12,7 @@ import Logos from "../Logos";
 import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 import "../App.scss"
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Timeline from "../Timeline";
 
 
 
@@ -217,7 +219,8 @@ let mybutton;
           </h1>
           <Logos/>    
         </div>
-
+          
+        <Timeline/>
         <div className="footer"> 
           <h4> Designed by Diego </h4>
           <p>Last updated on 8/12/2023</p>
@@ -237,6 +240,7 @@ let mybutton;
       <MDBIcon fas icon="arrow-up" />
     </MDBBtn>
         
+    
       </div>
       
 
