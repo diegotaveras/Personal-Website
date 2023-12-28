@@ -1,0 +1,7 @@
+[
+    {
+        "title" : "Spotify Playlist Analyzer",
+        "github_link" : "https://github.com/diegotaveras/diegotaveras.github.io/tree/main/backend/java-api/demo",
+        "description" : "This app allows you to sign in to your Spotify account using the Oauth2.0 authorization flow. You will be able to view your playlists and the average audio features of each of your playlists, as well as the individual values for each song. Audio features are a set of values that are used for recommendation and curation purposes by Spotify. Viewing them may give you an insight into the overall emotions, energy, and vibes that you convey through your playlists!"
+    }
+]

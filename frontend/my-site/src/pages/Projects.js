@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import {useState, useEffect} from "react";
-
-
+import github_logo from '../images/github-mark.svg';
+import project_data from '../data/project-data.json';
 
 
 
@@ -23,28 +23,38 @@ const getSpotifyUserLogin = async () => {
 
 
 export default function Projects() {
-  
+
+
   return (
   <div className="projects">
-    <div className="project-card">
-    <div className="project-description">
-      <h2>Welcome to my Spotify Playlist Analyzer, made possible by Spotify Web API!</h2>
+    {project_data.map((project) => {
+      return (
+      <div className="project-card">
+      <div className="project-description">
+        <div style={{display:"flex", justifyContent:"space-between"}}>
+          <h2 style={{textAlign:"left"}}>{project.title} </h2>
+         
+            <a href={project.github_link} target="_blank" rel="noopener noreferrer">
+              <img style={{marginTop:"1.3em"}} className="icons" src={github_logo} height="30px" alt="Github"></img>
+            </a>
+          
+        </div>
+      </div>
+      <div className="project-buttons">
+        <button onClick={getSpotifyUserLogin} >
+          Sign In
+        </button>
+      </div>
+      <div className="project-description">
+        <h1> {project.description} </h1>
+        
+      </div>
     </div>
-    <div className="project-buttons">
-      <button onClick={getSpotifyUserLogin} >
-        Sign In
-      </button>
-    </div>
-    <div className="project-description">
-      <h1>This app allows you to sign in to your Spotify account using the Oauth2.0 authorization flow. 
-        You will be able to view your playlists and the average audio features of each of your playlists, as well as the individual values for each song. 
-        Audio features are a set of values that are used for recommendation and curation purposes by Spotify. 
-        Viewing them may give you an insight into the overall emotions, energy, and vibes that you convey through your playlists! </h1>
-    </div>
-    <div className="project-description">
-      <h1> More updates to this app are coming soon! </h1>
-    </div>
-  </div>
+    )
+    }
+
+    )}
+    
 </div>
   );
 }
