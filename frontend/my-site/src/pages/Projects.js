@@ -27,11 +27,14 @@ export default function Projects() {
 
   return (
   <div className="projects">
+    <ul>
     {project_data.map((project) => {
+
       return (
-      <div className="project-card">
+        <li>
+      <div className="project-card"> 
       <div className="project-description">
-        <div style={{display:"flex", justifyContent:"space-between"}}>
+          <div style={{display:"flex", justifyContent:"space-between"}}>
           <h2 style={{textAlign:"left"}}>{project.title} </h2>
          
             <a href={project.github_link} target="_blank" rel="noopener noreferrer">
@@ -40,21 +43,44 @@ export default function Projects() {
           
         </div>
       </div>
+    
+      { project.button ? 
       <div className="project-buttons">
         <button onClick={getSpotifyUserLogin} >
           Sign In
         </button>
       </div>
+      : <div/>
+      }
+    
       <div className="project-description">
         <h1> {project.description} </h1>
         
       </div>
+      <div className="tags">
+        <ul className="tag-list"> 
+          {project.tags ? project.tags.map((tag) => {
+            return (
+              <li>
+                <div className="tag">
+                  <p>{tag}</p>
+
+                </div>
+              </li>
+            )
+          })
+           
+          :
+          <div/>}
+        </ul>
+      </div>
     </div>
+    </li>
     )
     }
 
     )}
-    
+  </ul>
 </div>
   );
 }
