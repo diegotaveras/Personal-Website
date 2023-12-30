@@ -3,7 +3,7 @@ import axios from "axios";
 import {useState, useEffect} from "react";
 import github_logo from '../images/github-mark.svg';
 import project_data from '../data/project-data.json';
-
+import Tags from "../Tags";
 
 
 const getSpotifyUserLogin = async () => {
@@ -44,7 +44,7 @@ export default function Projects() {
         </div>
       </div>
     
-      { project.button ? 
+      {project.button ? 
       <div className="project-buttons">
         <button onClick={getSpotifyUserLogin} >
           Sign In
@@ -57,23 +57,7 @@ export default function Projects() {
         <h1> {project.description} </h1>
         
       </div>
-      <div className="tags">
-        <ul className="tag-list"> 
-          {project.tags ? project.tags.map((tag) => {
-            return (
-              <li>
-                <div className="tag">
-                  <p>{tag}</p>
-
-                </div>
-              </li>
-            )
-          })
-           
-          :
-          <div/>}
-        </ul>
-      </div>
+    <Tags tags={project.tags}></Tags>
     </div>
     </li>
     )

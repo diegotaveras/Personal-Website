@@ -16,7 +16,6 @@ function NavBar() {
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
   return <nav className={`nav ${isMenuOpen ? 'hidden' : ''}`}>
     
     <Link to="/" className="site-title">

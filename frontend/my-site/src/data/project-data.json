@@ -4,23 +4,45 @@
         "github_link" : "https://github.com/diegotaveras/diegotaveras.github.io/tree/main/backend/java-api/demo",
         "description" : "This app allows you to sign in to your Spotify account using the Oauth2.0 authorization flow. You will be able to view your playlists and the average audio features of each of your playlists, as well as the individual values for each song. Audio features are a set of values that are used for recommendation and curation purposes by Spotify. Viewing them may give you an insight into the overall emotions, energy, and vibes that you convey through your playlists!",
         "button" : true,
-        "tags" : ["AWS","Data Science","Full-Stack","Full-Stack","Full-Stack","Full-Stack","Full-Stack","Full-Stack"]
+        "tags" : ["AWS","Data Science","Full-Stack","Java","Spring Boot","React.js","Chart.js","OAuth2.0", "DynamoDB"]
         
     },
     {
         "title" : "Trendify",
         "github_link" : "https://github.com/cs411-alawini/fa23-cs411-team070-A3D",
-        "description" : "This app allows you to sign in to your Spotify account using the Oauth2.0 authorization flow. You will be able to view your playlists and the average audio features of each of your playlists, as well as the individual values for each song. Audio features are a set of values that are used for recommendation and curation purposes by Spotify. Viewing them may give you an insight into the overall emotions, energy, and vibes that you convey through your playlists!",
-        "button" : false
+        "description" : "Engineered a full-stack application in React.js and Node.js that allows users to explore trending Youtube video tags to optimize their discoverability. Implemented search functionality that finds related tags based on SQL Stored Procedures. Users can filter search results by video category or geographical region. Used GCP to host the MySQL database. Wrote Python scripts to parse 200,000+ row dataset to model as relational tables.",
+        "button" : false,
+        "tags" : ["GCP","MySQL","Node.js","Full-Stack","React.js", "Javascript", "Python"]
+
+    },
+    {
+        "title" : "\"WeRent\" (HackIllinois 2023)",
+        "github_link" : "https://github.com/diegotaveras/Hackillinois2023",
+        "description" : "• Created a web application that consumes APIs of product data and displays it to the user. • Implemented search functionality with tunable search parameters. • Enabled user login features and profile data storage using MongoDB.",
+        "button" : false,
+        "tags" : ["MongoDB","React.js", "Node.js","Full-Stack", "Javascript"]
+
         
     },
     {
         "title" : "ARC Capacity Viewer",
         "github_link" : "https://github.com/CS222-UIUC/course-project-group-107",
         "description" : "• Django development of views, data models, and app encapsulation. • Leveraged REST APIs for effective data transfer between frontend and backend components. • MySQL for modeling capacity data for live capacity feeds for sections of UIUC's ARC facility.",
-        "button" : false
+        "button" : false,
+        "tags": ["Django", "Python", "Javascript", "MySQL", "Full-Stack"]
+        
+    },
+    {
+        "title" : "Reddit Visualizer",
+        "github_link" : "https://github.com/zyli2/graF",
+        "description" : "• Parsed large dataset to be modeled as a graph data structure. • Implemented graph algorithms to find the shortest path between reddit posts through hyperlinks. • Used graph visualization to display the relationships in centrality (betweenness, closeness) within posts.",
+        "button" : false,
+        "tags": ["C++", "CMake", "Catch2", "Backend"]
+
         
     }
+    
+
 
 
 ]
