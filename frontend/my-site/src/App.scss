@@ -256,6 +256,8 @@ body {
   } 
 }
 
+
+
 .projects ul {
   
   max-width: 80%;
@@ -263,17 +265,29 @@ body {
   // justify-content: center;
 }
 .project-card {
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   border-radius: 15px;
   background-color:#4a4848;
   padding-right: 2%;
   padding-left: 2%;
+  padding-bottom:2%;
   width: 100%;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 5%;
   height: fit-content;
   text-align: center;
+  
+
+  &:hover {
+
+    transform: translateY(-1.5%);
+    box-shadow: 8px 8px rgb(46, 46, 46);
+
+  }
+  transition: all linear 0.2s;
+
+  
 
 }
 

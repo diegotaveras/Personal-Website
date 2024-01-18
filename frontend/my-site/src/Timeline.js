@@ -1,6 +1,7 @@
 import React from "react";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import iti from './images/iti-logo.png';
 import './App.scss';
 
 export default function Timeline() {
@@ -41,7 +42,7 @@ export default function Timeline() {
                  contentArrowStyle={{ borderRight: '15px solid #13294B' }}
                  date="May - August 2023"
                  iconStyle={{ color: '#fff' }}
-                 icon={<img style= {{width:"100%",height:"100%",borderRadius:"100%"}} src="https://scontent-mia3-2.xx.fbcdn.net/v/t39.30808-6/299587452_492138892912100_8577244854158482487_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=xBI74ZgsKLYAX81JSKN&_nc_ht=scontent-mia3-2.xx&oh=00_AfCLaxbnrsG4brNUGpEh4u-9gLB_cL25bMl9g14Ivg2WQQ&oe=65923B8C"></img>}
+                 icon={<img style= {{width:"100%",height:"100%",borderRadius:"100%"}} src={iti}></img>}
                 //  icon={<WorkIcon />}
             >
                 <h3 className="vertical-timeline-element-title">Information Trust Institute <span style={{color:"white"}}> | </span> Software Developer Intern</h3>
