@@ -223,7 +223,7 @@ let mybutton;
         <Timeline/>
         <div className="footer"> 
           <h4> Designed by Diego </h4>
-          <p>Last updated on 1/17/2024</p>
+          <p>Last updated on 1/18/2024</p>
         </div>
         <MDBBtn 
       onClick={backToTop} 

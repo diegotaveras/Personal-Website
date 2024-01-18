@@ -31,8 +31,16 @@ export default function Timeline() {
                  icon={<img style= {{borderRadius:"100%"}} src="https://asset.brandfetch.io/id16yPOFSJ/idWGoSk0t3.svg"></img>}
                 //  icon={<WorkIcon />}
             >
-                <h3 className="vertical-timeline-element-title">AbbVie <span style={{color:"white"}}> | </span> Frontend Developer Intern</h3>
+                <h3 className="vertical-timeline-element-title">AbbVie <span style={{color:"white"}}> | </span> Software Engineer Intern</h3>
                 <h4 className="vertical-timeline-element-subtitle">Champaign, IL</h4>
+                <br/>
+                <h4 style={{color:"white"}} className="vertical-timeline-element-subtitle"> 
+                • Engineered a reactive web application that allows users to submit, view, like, and comment on other user’s 
+                company improvement posts. <br/><br/>
+                • Utilized Outsystems, custom JavaScript components, and CSS styling to design and develop the forum 
+                page, and an application admin page that enables viewing and archiving posts, and exporting post data as a 
+                spreadsheet. <br/><br/>
+                • Wrote SQL queries to create dynamic filters and sort functionality.</h4>
                 
             </VerticalTimelineElement>
             <VerticalTimelineElement
