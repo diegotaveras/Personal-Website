@@ -7,7 +7,7 @@ import './App.scss';
 export default function Timeline() {
     return (
         <VerticalTimeline>
-            {/* <VerticalTimelineElement
+            <VerticalTimelineElement
                 animate = {true}
                  className="vertical-timeline-element--work"
                  contentStyle={{ background: '#04006c', color: '#FFC200' }}
@@ -20,7 +20,7 @@ export default function Timeline() {
                 <h3 className="vertical-timeline-element-title">WBD <span style={{color:"white"}}> | </span> Incoming Software Engineering Intern</h3>
                 <h4 className="vertical-timeline-element-subtitle"></h4>
                 
-            </VerticalTimelineElement> */}
+            </VerticalTimelineElement>
             <VerticalTimelineElement
                 animate = {true}
                  className="vertical-timeline-element--work"

@@ -29,7 +29,7 @@ export default function Logos() {
                 <h3 className='logo-label'>Spring</h3>
               </li>
               <li className="logo">
-                <i className="devicon-amazonwebservices-original colored" style={{ fontSize: "100px" }}></i>        
+                <i className="devicon-amazonwebservices-plain-wordmark colored" style={{ fontSize: "100px" }}></i>        
                 <h3 className='logo-label'>Amazon Web Services</h3>
               </li>
             
@@ -109,7 +109,7 @@ export default function Logos() {
                 <h3 className='logo-label'> Android </h3>
               </li> 
               <li className="logo">
-                <i class="devicon-numpy-original colored" style={{ fontSize: "100px" }}></i>
+                <i class="devicon-numpy-plain colored" style={{ fontSize: "100px" }}></i>
                 <h3 className='logo-label'> NumPy </h3>
               </li> 
               <li className="logo">
@@ -129,7 +129,7 @@ export default function Logos() {
                 <h3 className='logo-label'> Linux </h3>
               </li> 
               <li className="logo">
-                <i class="devicon-networkx-original colored" style={{ fontSize: "100px" }}></i>
+                <i class="devicon-networkx-plain colored" style={{ fontSize: "100px" }}></i>
                 <h3 className='logo-label'> Networkx </h3>
               </li> 
               <li className="logo">
